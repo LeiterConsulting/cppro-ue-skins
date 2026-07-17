@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cppro.dev/schemas/profile.schema.json",
+  "title": "CPPRO semantic input profile",
+  "type": "object",
+  "required": ["schema", "version", "name", "bindings"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "cppro-profile" },
+    "version": { "const": 1 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 32 },
+    "bindings": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cppro.dev/schemas/skin.schema.json",
+  "title": "CPPRO interactive skin",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "id",
+    "name",
+    "canvas",
+    "layout",
+    "theme",
+    "profile",
+    "states",
+    "effects"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "cppro-skin" },
+    "version": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 48 },
+    "build_id": { "type": "string", "minLength": 1, "maxLength": 24 },
+    "canvas": {
+      "type": "object",
+      "required": ["width", "height"],
+      "additionalProperties": false,
+      "properties": {
+        "width": { "const": 1920 },
+        "height": { "const": 550 }
+      }
+    },
+    "layout": { "type": "string" },
+    "theme": { "type": "string" },
+    "profile": { "type": "string" },
+    "states": {
+      "type": "object",
+      "required": ["initial", "allowed"],
+      "additionalProperties": false,
+      "properties": {
+        "initial": { "type": "string" },
+        "allowed": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["boot", "attract", "ready", "live", "paused", "result"] }
+        }
+      }
+    },
+    "effects": {
+      "type": "object",
+      "required": ["key_lights", "release_pad", "wave"],
+      "additionalProperties": false,
+      "properties": {
+        "key_lights": { "$ref": "#/$defs/pool" },
+        "release_pad": {
+          "allOf": [
+            { "$ref": "#/$defs/pool" },
+            {
+              "type": "object",
+              "required": ["hold_cap_ms", "duration_ms"],
+              "properties": {
+                "hold_cap_ms": { "type": "integer", "minimum": 1, "maximum": 5000 },
+                "duration_ms": { "type": "integer", "minimum": 1, "maximum": 5000 }
+              }
+            }
+          ]
+        },
+        "wave": {
+          "allOf": [
+            { "$ref": "#/$defs/pool" },
+            {
+              "type": "object",
+              "required": ["radii_px", "stage_ms", "opacity"],
+              "properties": {
+                "radii_px": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": { "type": "number", "exclusiveMinimum": 0, "maximum": 400 }
+                },
+                "stage_ms": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": { "type": "integer", "minimum": 1, "maximum": 2000 }
+                },
+                "opacity": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "items": { "type": "number", "minimum": 0, "maximum": 1 }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "pool": {
+      "type": "object",
+      "required": ["pool_size"],
+      "properties": {
+        "pool_size": { "type": "integer", "minimum": 1, "maximum": 512 }
+      }
+    }
+  }
+}

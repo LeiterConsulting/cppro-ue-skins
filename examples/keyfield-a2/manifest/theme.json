@@ -1,0 +1,31 @@
+{
+  "schema": "cppro-theme",
+  "version": 1,
+  "name": "keyfield-neon",
+  "background": "#01030AFF",
+  "text": "#FFFFFFFF",
+  "row_colors": [
+    "#FFAD0FCC",
+    "#05E0FFCC",
+    "#38FF6BCC",
+    "#FF2EB8CC",
+    "#AD57FFCC"
+  ],
+  "palettes": [
+    {
+      "id": "cyan",
+      "label": "CYAN",
+      "accent": "#00DFFFFF"
+    },
+    {
+      "id": "magenta",
+      "label": "MAGENTA",
+      "accent": "#FF28C8FF"
+    },
+    {
+      "id": "amber",
+      "label": "AMBER",
+      "accent": "#FFB000FF"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# Unreal Engine build products
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Local build output
+/artifacts/
+/.venv/
+__pycache__/
+*.py[cod]
+
+# IDE and OS files
+.vs/
+.vscode/
+.idea/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+.DS_Store
+Thumbs.db
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example

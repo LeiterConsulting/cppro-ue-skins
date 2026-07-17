@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="550" viewBox="0 0 1920 550">
+<rect width="1920" height="550" fill="#01030A" fill-opacity="1.000"/>
+<rect x="1600.000" y="0.000" width="106.667" height="440.000" fill="#49217a" fill-opacity=".34" stroke="#c985ff" stroke-width="2"/>
+<text x="1608.000" y="20.000" fill="#ffffff" font-family="monospace" font-size="14">h_rail</text>
+<rect x="1600.000" y="220.000" width="320.000" height="110.000" fill="#49217a" fill-opacity=".34" stroke="#c985ff" stroke-width="2"/>
+<text x="1608.000" y="240.000" fill="#ffffff" font-family="monospace" font-size="14">h_shelf</text>
+<rect x="1813.333" y="330.000" width="106.667" height="110.000" fill="#49217a" fill-opacity=".34" stroke="#c985ff" stroke-width="2"/>
+<text x="1821.333" y="350.000" fill="#ffffff" font-family="monospace" font-size="14">h_right_leg</text>
+<rect x="1493.333" y="440.000" width="106.667" height="110.000" fill="#49217a" fill-opacity=".34" stroke="#c985ff" stroke-width="2"/>
+<text x="1501.333" y="460.000" fill="#ffffff" font-family="monospace" font-size="14">right_ctrl_left_arrow_gap</text>
+<rect x="4.000" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="10.000" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L00 Esc</text>
+<rect x="110.889" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="116.889" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L01 1</text>
+<rect x="217.778" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="223.778" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L02 2</text>
+<rect x="324.667" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="330.667" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L03 3</text>
+<rect x="431.556" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="437.556" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L04 4</text>
+<rect x="538.444" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="544.444" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L05 5</text>
+<rect x="645.333" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="651.333" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L06 6</text>
+<rect x="752.222" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="758.222" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L07 7</text>
+<rect x="859.111" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="865.111" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L08 8</text>
+<rect x="966.000" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="972.000" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L09 9</text>
+<rect x="1072.889" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="1078.889" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L10 0</text>
+<rect x="1179.778" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="1185.778" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L11 -</text>
+<rect x="1286.667" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="1292.667" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L12 =</text>
+<rect x="1393.556" y="4.000" width="205.778" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="1399.556" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L13 Bksp</text>
+<rect x="1714.222" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="1720.222" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L14 Ins</text>
+<rect x="1821.111" y="4.000" width="98.889" height="102.000" rx="7" fill="#FFAD0F" fill-opacity="0.224" stroke="#FFAD0F" stroke-width="2"/>
+<text x="1827.111" y="24.000" fill="#ffffff" font-family="monospace" font-size="16">L15 PgUp</text>
+<rect x="4.000" y="114.000" width="152.333" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="10.000" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L16 Tab</text>
+<rect x="164.333" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="170.333" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L17 Q</text>
+<rect x="271.222" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="277.222" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L18 W</text>
+<rect x="378.111" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="384.111" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L19 E</text>
+<rect x="485.000" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="491.000" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L20 R</text>
+<rect x="591.889" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="597.889" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L21 T</text>
+<rect x="698.778" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="704.778" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L22 Y</text>
+<rect x="805.667" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="811.667" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L23 U</text>
+<rect x="912.556" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="918.556" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L24 I</text>
+<rect x="1019.444" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="1025.444" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L25 O</text>
+<rect x="1126.333" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="1132.333" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L26 P</text>
+<rect x="1233.222" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="1239.222" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L27 [</text>
+<rect x="1340.111" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="1346.111" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L28 ]</text>
+<rect x="1447.000" y="114.000" width="152.333" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="1453.000" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L29 \</text>
+<rect x="1714.222" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="1720.222" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L30 Del</text>
+<rect x="1821.111" y="114.000" width="98.889" height="102.000" rx="7" fill="#05E0FF" fill-opacity="0.224" stroke="#05E0FF" stroke-width="2"/>
+<text x="1827.111" y="134.000" fill="#ffffff" font-family="monospace" font-size="16">L31 PgDn</text>
+<rect x="4.000" y="224.000" width="179.056" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="10.000" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L32 Caps</text>
+<rect x="191.056" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="197.056" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L33 A</text>
+<rect x="297.944" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="303.944" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L34 S</text>
+<rect x="404.833" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="410.833" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L35 D</text>
+<rect x="511.722" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="517.722" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L36 F</text>
+<rect x="618.611" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="624.611" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L37 G</text>
+<rect x="725.500" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="731.500" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L38 H</text>
+<rect x="832.389" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="838.389" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L39 J</text>
+<rect x="939.278" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="945.278" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L40 K</text>
+<rect x="1046.167" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="1052.167" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L41 L</text>
+<rect x="1153.056" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="1159.056" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L42 ;</text>
+<rect x="1259.944" y="224.000" width="98.889" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="1265.944" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L43 &#x27;</text>
+<rect x="1366.833" y="224.000" width="232.500" height="102.000" rx="7" fill="#38FF6B" fill-opacity="0.224" stroke="#38FF6B" stroke-width="2"/>
+<text x="1372.833" y="244.000" fill="#ffffff" font-family="monospace" font-size="16">L44 Enter</text>
+<rect x="4.000" y="334.000" width="232.500" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="10.000" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L45 LShift</text>
+<rect x="244.500" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="250.500" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L46 Z</text>
+<rect x="351.389" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="357.389" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L47 X</text>
+<rect x="458.278" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="464.278" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L48 C</text>
+<rect x="565.167" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="571.167" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L49 V</text>
+<rect x="672.056" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="678.056" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L50 B</text>
+<rect x="778.944" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="784.944" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L51 N</text>
+<rect x="885.833" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="891.833" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L52 M</text>
+<rect x="992.722" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="998.722" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L53 ,</text>
+<rect x="1099.611" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="1105.611" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L54 .</text>
+<rect x="1206.500" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="1212.500" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L55 /</text>
+<rect x="1313.389" y="334.000" width="285.944" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="1319.389" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L56 RShift</text>
+<rect x="1714.222" y="334.000" width="98.889" height="102.000" rx="7" fill="#FF2EB8" fill-opacity="0.224" stroke="#FF2EB8" stroke-width="2"/>
+<text x="1720.222" y="354.000" fill="#ffffff" font-family="monospace" font-size="16">L57 Up</text>
+<rect x="4.000" y="444.000" width="125.611" height="102.000" rx="7" fill="#AD57FF" fill-opacity="0.224" stroke="#AD57FF" stroke-width="2"/>
+<text x="10.000" y="464.000" fill="#ffffff" font-family="monospace" font-size="16">L58 LCtrl</text>
+<rect x="137.611" y="444.000" width="125.611" height="102.000" rx="7" fill="#AD57FF" fill-opacity="0.224" stroke="#AD57FF" stroke-width="2"/>
+<text x="143.611" y="464.000" fill="#ffffff" font-family="monospace" font-size="16">L59 Meta</text>
+<rect x="271.222" y="444.000" width="125.611" height="102.000" rx="7" fill="#AD57FF" fill-opacity="0.224" stroke="#AD57FF" stroke-width="2"/>
+<text x="277.222" y="464.000" fill="#ffffff" font-family="monospace" font-size="16">L60 LAlt</text>
+<rect x="404.833" y="444.000" width="660.056" height="102.000" rx="7" fill="#AD57FF" fill-opacity="0.224" stroke="#AD57FF" stroke-width="2"/>
+<text x="410.833" y="464.000" fill="#ffffff" font-family="monospace" font-size="16">L61 Space</text>
+<rect x="1072.889" y="444.000" width="125.611" height="102.000" rx="7" fill="#AD57FF" fill-opacity="0.224" stroke="#AD57FF" stroke-width="2"/>
+<text x="1078.889" y="464.000" fill="#ffffff" font-family="monospace" font-size="16">L62 RAlt</text>
+<rect x="1206.500" y="444.000" width="125.611" height="102.000" rx="7" fill="#AD57FF" fill-opacity="0.224" stroke="#AD57FF" stroke-width="2"/>
+<text x="1212.500" y="464.000" fill="#ffffff" font-family="monospace" font-size="16">L63 Fn</text>
+<rect x="1340.111" y="444.000" width="152.333" height="102.000" rx="7" fill="#AD57FF" fill-opacity="0.224" stroke="#AD57FF" stroke-width="2"/>
+<text x="1346.111" y="464.000" fill="#ffffff" font-family="monospace" font-size="16">L64 RCtrl</text>
+<rect x="1607.333" y="444.000" width="98.889" height="102.000" rx="7" fill="#AD57FF" fill-opacity="0.224" stroke="#AD57FF" stroke-width="2"/>
+<text x="1613.333" y="464.000" fill="#ffffff" font-family="monospace" font-size="16">L65 Left</text>
+<rect x="1714.222" y="444.000" width="98.889" height="102.000" rx="7" fill="#AD57FF" fill-opacity="0.224" stroke="#AD57FF" stroke-width="2"/>
+<text x="1720.222" y="464.000" fill="#ffffff" font-family="monospace" font-size="16">L66 Down</text>
+<rect x="1821.111" y="444.000" width="98.889" height="102.000" rx="7" fill="#AD57FF" fill-opacity="0.224" stroke="#AD57FF" stroke-width="2"/>
+<text x="1827.111" y="464.000" fill="#ffffff" font-family="monospace" font-size="16">L67 Right</text>
+<text x="1612" y="252" fill="#ffffff" font-family="monospace" font-size="19">Keyfield A2 App Shell</text>
+<text x="1612" y="278" fill="#ffffff" font-family="monospace" font-size="16">READY · CYAN / MAGENTA / AMBER</text>
+</svg>

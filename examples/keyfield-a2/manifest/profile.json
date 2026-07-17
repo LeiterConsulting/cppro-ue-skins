@@ -1,0 +1,11 @@
+{
+  "schema": "cppro-profile",
+  "version": 1,
+  "name": "keyfield-app-shell",
+  "bindings": {
+    "tab": "next_palette",
+    "enter": "start_or_resume",
+    "escape": "pause",
+    "backspace": "reset"
+  }
+}

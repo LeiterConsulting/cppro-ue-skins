@@ -1,0 +1,19 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "0.1-experimental",
+  "FriendlyName": "CPPRO SkinApi Authoring Stub",
+  "Description": "Clean-room cook-time declarations for the device-provided SkinApi runtime.",
+  "Category": "CPPRO",
+  "CreatedBy": "CPPRO UE Skins community",
+  "EnabledByDefault": true,
+  "CanContainContent": true,
+  "Installed": true,
+  "Modules": [
+    {
+      "Name": "SkinApi",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cppro.dev/schemas/theme.schema.json",
+  "title": "CPPRO visual theme",
+  "type": "object",
+  "required": ["schema", "version", "name", "background", "text", "row_colors", "palettes"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "cppro-theme" },
+    "version": { "const": 1 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 32 },
+    "background": { "$ref": "#/$defs/color" },
+    "text": { "$ref": "#/$defs/color" },
+    "row_colors": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": { "$ref": "#/$defs/color" }
+    },
+    "palettes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "accent"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 16 },
+          "accent": { "$ref": "#/$defs/color" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}(?:[0-9A-Fa-f]{2})?$"
+    }
+  }
+}
