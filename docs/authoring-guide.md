@@ -41,6 +41,20 @@ The keyboard is a constrained runtime. Prefer:
 Avoid unbounded spawning, large textures, excessive translucency, tick-heavy
 graphs, or state transitions that discard release events.
 
+## Use a hybrid scene when physics helps
+
+The Koi Pond example separates simulation from presentation. Small invisible
+world actors provide collision, steering, separation, and key impulses; UMG
+images provide the full-resolution pond and animated koi. Each tick maps a
+physics proxy into the 1920×550 widget and applies a bounded turn rate to its
+sprite.
+
+This is useful when a skin needs moving actors but late-mounted custom material
+shaders are unreliable. Keep the world actor count fixed, share animation
+textures across actors, preallocate reactive widgets, and avoid spawning on
+keypress. See the [Koi Pond architecture](../examples/koi-pond/ARCHITECTURE.md)
+for the complete pattern.
+
 ## Separate controls from visuals
 
 Use stable physical IDs such as `enter`, `tab`, and `arrow_left` in profiles.

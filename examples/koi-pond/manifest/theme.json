@@ -1,0 +1,21 @@
+{
+  "schema": "cppro-theme",
+  "version": 1,
+  "name": "underwater-pond",
+  "background": "#062F29FF",
+  "text": "#E9FFF7FF",
+  "row_colors": [
+    "#1F8F75CC",
+    "#20A888CC",
+    "#32BE8DCC",
+    "#3AB59FCC",
+    "#238B84CC"
+  ],
+  "palettes": [
+    {
+      "id": "pond",
+      "label": "POND",
+      "accent": "#73EBFFFF"
+    }
+  ]
+}

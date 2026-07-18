@@ -10,6 +10,17 @@ their respective owners. They are used here only to describe compatibility.
 No Finalmouse application binaries, firmware, official skin PAKs, extracted
 official artwork, packet captures, or device credentials are included.
 
-No open-source license has been selected for this repository yet. Source is
-published for evaluation and collaboration; do not assume additional rights
-until the repository owner adds a license.
+The pond background and koi atlas in `examples/koi-pond/source-art/` were
+created with ChatGPT at the repository owner's direction. They are included as
+original project artwork and are not extracted from a Finalmouse skin or a
+third-party asset pack.
+
+Unless a file states otherwise, the repository's original code, documentation,
+manifests, tooling, and original example artwork are licensed under the
+[MIT License](LICENSE).
+
+The MIT License does not replace licenses or terms that apply to third-party
+technology. Unreal Engine, its tools, runtime components, and cooked content
+remain subject to Epic Games' applicable terms. Finalmouse software, hardware,
+and marks remain subject to their owners' terms. The repository's MIT grant
+only covers rights held by the repository copyright holder.

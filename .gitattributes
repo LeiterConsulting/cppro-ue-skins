@@ -1,6 +1,8 @@
 *.pak binary
 *.uasset binary
 *.umap binary
+*.jpg binary
+*.png binary
 *.svg text eol=lf
 *.json text eol=lf
 *.md text eol=lf

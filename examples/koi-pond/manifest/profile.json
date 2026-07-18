@@ -1,0 +1,8 @@
+{
+  "schema": "cppro-profile",
+  "version": 1,
+  "name": "koi-pond",
+  "bindings": {
+    "space": "disturb_pond"
+  }
+}

@@ -20,6 +20,10 @@ own SkinApi implementation at runtime.
 The startup map is `/Game/map/M_EntryPoint`. Do not rename or move this map in
 your first experiments.
 
+The checked-in map launches Keyfield A2. Examples that need their own world
+actors may include an exact canonical map snapshot. Koi Pond documents how to
+activate its snapshot, cook it, and restore the default map.
+
 ## 3. Run the example locally
 
 Play-in-editor can exercise visuals and Blueprint structure, but a desktop

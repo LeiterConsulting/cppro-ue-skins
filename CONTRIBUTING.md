@@ -22,3 +22,7 @@ Before opening a pull request:
 
 Please keep generated PAKs under GitHub's normal file-size limit. Never replace
 an accepted example PAK without updating its checksum and test notes.
+
+By contributing original work to this repository, you agree that it may be
+distributed under the repository's [MIT License](LICENSE). Do not contribute
+material you do not have permission to license on those terms.

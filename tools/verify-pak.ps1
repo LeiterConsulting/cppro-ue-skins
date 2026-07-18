@@ -2,7 +2,8 @@
 param(
   [Parameter(Mandatory = $true)]
   [string]$Pak,
-  [string]$EngineRoot = ''
+  [string]$EngineRoot = '',
+  [string[]]$ExpectedAssets = @()
 )
 
 Set-StrictMode -Version Latest
@@ -35,12 +36,9 @@ $maps = [regex]::Matches($listing, 'spark/Content/[^"]+\.umap')
 if ($maps.Count -ne 1 -or $maps[0].Value -ne 'spark/Content/map/M_EntryPoint.umap') {
   throw "Expected exactly spark/Content/map/M_EntryPoint.umap; found: $($maps.Value -join ', ')"
 }
-foreach ($asset in @(
-  'spark/Content/CPPRO/KeyfieldA2/BP_KeyfieldA2.uasset',
-  'spark/Content/CPPRO/KeyfieldA2/WBP_KeyfieldA2.uasset'
-)) {
+foreach ($asset in $ExpectedAssets) {
   if (-not $listing.Contains($asset)) {
-    Write-Warning "Example asset not present: $asset. This is valid for a renamed skin."
+    throw "Expected asset not present: $asset"
   }
 }
 if (-not $listing.Contains('LogPakFile: Display: Mount point ../../../')) {
@@ -55,5 +53,6 @@ $hash = Get-FileHash -LiteralPath $pakPath -Algorithm SHA256
   SHA256 = $hash.Hash
   Maps = $maps.Count
   CanonicalMap = $maps[0].Value
+  ExpectedAssets = $ExpectedAssets.Count
   Integrity = 'PASS'
 }

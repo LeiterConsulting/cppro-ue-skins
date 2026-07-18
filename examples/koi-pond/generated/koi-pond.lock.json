@@ -1,0 +1,113 @@
+{
+  "schema": "cppro-skin-lock",
+  "version": 1,
+  "skin_id": "koi-pond",
+  "inputs": {
+    "manifest": {
+      "path": "skin.json",
+      "sha256": "26B6419B5644A6CFEF2699D04894FB5E4BEEC9123E92F883FC7FFD1FA959A497"
+    },
+    "layout": {
+      "path": "../../../layout/cppro-key-layout-v1.json",
+      "sha256": "D8BEEE672E6B14A072787EF310185BBDB12090A4B794EDFCF5EFD8D87228687B"
+    },
+    "theme": {
+      "path": "theme.json",
+      "sha256": "FB32FF3A9160DBED5DFE1525D4AD717B8CD6F46980E71624FA438FECDBFF16B6"
+    },
+    "profile": {
+      "path": "profile.json",
+      "sha256": "4CD00858062B820A4A77EE17A4844BFBFC221F0F2AEFF4E922D4ACC40E1C454C"
+    }
+  },
+  "resolved": {
+    "canvas": {
+      "width": 1920,
+      "height": 550
+    },
+    "key_count": 68,
+    "native_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67
+    ],
+    "bindings": {
+      "space": "disturb_pond"
+    },
+    "states": {
+      "initial": "live",
+      "allowed": [
+        "live"
+      ]
+    },
+    "palettes": [
+      "pond"
+    ],
+    "effect_pool_total": 340
+  }
+}
