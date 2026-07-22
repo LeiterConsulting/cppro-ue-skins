@@ -1,0 +1,8 @@
+{
+  "schema": "cppro-profile",
+  "version": 1,
+  "name": "keyfield-pulse",
+  "bindings": {
+    "caps_lock": "toggle_caps_indicator"
+  }
+}

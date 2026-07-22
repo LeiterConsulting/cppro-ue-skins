@@ -22,6 +22,7 @@ official skins, exploratory probes, or private development artifacts.
 | Skin | Type | What it demonstrates | Download and documentation |
 | --- | --- | --- | --- |
 | Keyfield A2 | Interactive app shell | All 68 mapped keys, press/release effects, palettes, readable display regions, and Ready/Live/Paused states | [Keyfield A2](examples/keyfield-a2/README.md) |
+| Keyfield Pulse | Daily interactive skin | Clean always-live key lights, hold-sensitive releases, three-stage waves, and a persistent Caps indicator | [Keyfield Pulse](examples/keyfield-pulse/README.md) |
 | Koi Pond | Living physics sandbox | Full-screen artwork, animated koi, continuous swimming, water ripples, and key-position physics impulses | [Koi Pond](examples/koi-pond/README.md) |
 | Koi Pond: Caps Indicator | Stateful utility skin | Koi Pond plus a session-local Caps Lock indicator with a persistent, edge-latched toggle | [Koi Pond: Caps Indicator](examples/koi-pond-caps-indicator/README.md) |
 
@@ -58,6 +59,7 @@ firmware proves otherwise.
 | --- | --- |
 | `project/` | Minimal editable UE4.27 `spark` project and SkinApi stub |
 | `examples/keyfield-a2/` | App-state and calibrated keyfield example |
+| `examples/keyfield-pulse/` | Clean always-live keyfield skin with Caps state |
 | `examples/koi-pond/` | Living physics scene, original art, source map, and PAK |
 | `examples/koi-pond-caps-indicator/` | Koi Pond variant with a persistent Caps Lock toggle |
 | `layout/` | Calibrated display geometry and native index map |
@@ -146,6 +148,17 @@ resets, and Tab cycles palettes. Its exact SHA-256 is:
 ```
 
 See [examples/keyfield-a2/README.md](examples/keyfield-a2/README.md).
+
+## Keyfield Pulse
+
+Keyfield Pulse is a clean, always-live interpretation of the proven Keyfield
+effects. It removes A2's calibration and app-shell UI while retaining all 68
+mapped key lights, hold-sensitive release pads, and three-stage waves. A
+session-local, edge-latched orange layer provides a visible Caps Lock state.
+
+Its exact device-tested PAK, editable UE4.27 assets, canonical map snapshot,
+manifest, preview, and checksum are included. See
+[examples/keyfield-pulse/README.md](examples/keyfield-pulse/README.md).
 
 ## Koi Pond
 

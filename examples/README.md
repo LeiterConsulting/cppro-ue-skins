@@ -7,6 +7,7 @@ assets, exact release PAK, checksum, and any important runtime limitations.
 | Example | Start here when you want to build | Device-tested slot |
 | --- | --- | ---: |
 | [Keyfield A2](keyfield-a2/README.md) | An app-like skin with all 68 keys, modes, palettes, readable safe-region UI, and bounded press/release effects | 5 |
+| [Keyfield Pulse](keyfield-pulse/README.md) | A clean always-live keyboard skin with mapped lights, hold-sensitive releases, waves, and Caps state | 2 |
 | [Koi Pond](koi-pond/README.md) | A full-screen living scene with animated actors, continuous steering, ripples, and localized physics impulses | 5 |
 | [Koi Pond: Caps Indicator](koi-pond-caps-indicator/README.md) | A visual skin that also keeps a small persistent Boolean-style state across input events | 4 |
 

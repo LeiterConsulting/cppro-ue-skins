@@ -1,0 +1,21 @@
+{
+  "schema": "cppro-theme",
+  "version": 1,
+  "name": "keyfield-pulse-neon",
+  "background": "#000108FF",
+  "text": "#FFFFFFFF",
+  "row_colors": [
+    "#FFAD0FCC",
+    "#05E0FFCC",
+    "#38FF6BCC",
+    "#FF2EB8CC",
+    "#AD57FFCC"
+  ],
+  "palettes": [
+    {
+      "id": "neon",
+      "label": "NEON",
+      "accent": "#00DFFFFF"
+    }
+  ]
+}

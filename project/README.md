@@ -7,6 +7,10 @@ Included content:
 - `/Game/map/M_EntryPoint` — canonical startup map.
 - `/Game/CPPRO/KeyfieldA2/BP_KeyfieldA2` — input and app-state actor.
 - `/Game/CPPRO/KeyfieldA2/WBP_KeyfieldA2` — calibrated display widget.
+- `/Game/CPPRO/KeyfieldPulse/BP_KeyfieldPulse` — always-live input,
+  release-wave, and Caps-state actor.
+- `/Game/CPPRO/KeyfieldPulse/WBP_KeyfieldPulse` — clean daily-use keyfield
+  widget with all calibration chrome removed.
 - `/Game/CPPRO/TouchPoolL1/BP_TouchPoolL1` — Koi Pond input, physics,
   steering, and presentation actor.
 - `/Game/CPPRO/TouchPoolL1/WBP_TouchPoolL1` — Koi Pond scene widget.
@@ -23,9 +27,9 @@ Do not rename the project module or canonical map during initial work. Duplicate
 the A2 actor and widget, edit the copies, and replace the actor in the canonical
 map.
 
-The checked-in canonical map launches Keyfield A2. Koi Pond includes its exact
-canonical map snapshot under `examples/koi-pond/project-map/`; follow that
-example's README to activate it before cooking.
+The checked-in canonical map launches Keyfield A2. Other complete skins include
+their exact canonical map snapshots under their `examples/*/project-map/`
+folders; follow the selected example's README to activate it before cooking.
 
 Generated folders are ignored by the repository. Unreal Engine itself is not
 redistributed.
