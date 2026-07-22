@@ -154,3 +154,9 @@ Good first changes are:
 
 Keep one runtime technology change per hardware test, retain a known-good slot,
 and verify release events even if a future design only reacts on presses.
+
+## Related example
+
+[Koi Pond: Caps Indicator](../koi-pond-caps-indicator/README.md) adds a
+device-session-local Caps Lock state layer while preserving this pond's art,
+swimming controller, ripples, and physics interactions.

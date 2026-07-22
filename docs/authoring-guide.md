@@ -25,7 +25,17 @@ reference, but those values must not drive the skin callback mapping.
 
 `IsActuated` reliably distinguishes press and release. Although the ABI includes
 an integer `Percentage`, the tested runtime supplies 100 on presses rather than
-continuous analog travel. Avoid gameplay that depends on pressure depth.
+continuous analog travel. Host-side USB capture can observe analog movement,
+but the tested Android SkinApi does not forward that resolution to the skin.
+Avoid device-resident gameplay that depends on pressure depth.
+
+Useful device-local substitutes include:
+
+- elapsed time between the press and release edges;
+- recent key-event cadence;
+- per-key usage counters and decaying energy;
+- chord state; and
+- persistent profile or mode state.
 
 ## Keep effects bounded
 
@@ -40,6 +50,31 @@ The keyboard is a constrained runtime. Prefer:
 
 Avoid unbounded spawning, large textures, excessive translucency, tick-heavy
 graphs, or state transitions that discard release events.
+
+## Compose UMG and Niagara deliberately
+
+Niagara is confirmed on the tested device for both CPU and GPU simulation. It
+renders through the world camera; viewport UMG is composited over it. An opaque
+1920×550 UMG background therefore hides the entire particle scene even while
+every Niagara component reports loaded, assigned, and active.
+
+For a hybrid particle skin:
+
+- keep the full-screen UMG world window transparent;
+- use opaque UMG only for intentional HUD or safe-region panels;
+- preallocate a fixed Niagara component pool;
+- move and reinitialize pooled components instead of spawning per keypress;
+- set explicit fixed bounds where appropriate;
+- cook particle shaders for Android ASTC; and
+- measure the actual emitter/material combination on the keyboard.
+
+The held-system benchmark remained at the device's approximately 29 FPS ceiling
+through 16 GPU systems. A two-second warm-up sweep measured 26 FPS at 18
+systems, 21 FPS at 20, and 18 FPS at 22. Reset performance counters after
+activation settles so the one-time reveal cost is not mistaken for sustained
+rendering cost. This is evidence for bounded pooling, not a universal
+particle-count limit. See [Niagara](niagara.md) for the complete measured
+curves and integration checklist.
 
 ## Use a hybrid scene when physics helps
 

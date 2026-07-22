@@ -23,10 +23,12 @@ official skins, exploratory probes, or private development artifacts.
 | --- | --- | --- | --- |
 | Keyfield A2 | Interactive app shell | All 68 mapped keys, press/release effects, palettes, readable display regions, and Ready/Live/Paused states | [Keyfield A2](examples/keyfield-a2/README.md) |
 | Koi Pond | Living physics sandbox | Full-screen artwork, animated koi, continuous swimming, water ripples, and key-position physics impulses | [Koi Pond](examples/koi-pond/README.md) |
+| Koi Pond: Caps Indicator | Stateful utility skin | Koi Pond plus a session-local Caps Lock indicator with a persistent, edge-latched toggle | [Koi Pond: Caps Indicator](examples/koi-pond-caps-indicator/README.md) |
 
 Each example includes its exact release PAK and SHA-256 checksum. Koi Pond also
 includes its original artwork, generated animation frames, frame-preparation
-tool, editable UE4.27 assets, and canonical source-map snapshot.
+tool, editable UE4.27 assets, and canonical source-map snapshot. Browse the
+complete [examples index](examples/README.md) for controls and source contents.
 
 ## What works
 
@@ -38,12 +40,17 @@ tool, editable UE4.27 assets, and canonical source-map snapshot.
 - Reliable per-key press and release edges.
 - Bounded UMG animation, pooled key effects, and application states.
 - Hybrid UMG/physics scenes with animated actors and key-position impulses.
+- CPU and GPU Niagara systems, including pooled components and custom
+  particle materials.
 - Readable content in the keyboard's key-free display regions.
 - Direct, explicit PAK upload to slots 1–5.
 
 The installed device runtime currently reports `Percentage=100` for a press;
-continuous analog depth is not available to the skin callback. Design device
-skins around `IsActuated` unless later firmware proves otherwise.
+continuous analog depth is not available to the skin callback. The keyboard's
+analog travel is visible in host-side USB traffic, but that does not imply that
+the Android Unreal runtime forwards it to `OnKeyEvent`. Design device skins
+around `IsActuated`, hold duration, cadence, and accumulated state unless later
+firmware proves otherwise.
 
 ## Repository map
 
@@ -52,6 +59,7 @@ skins around `IsActuated` unless later firmware proves otherwise.
 | `project/` | Minimal editable UE4.27 `spark` project and SkinApi stub |
 | `examples/keyfield-a2/` | App-state and calibrated keyfield example |
 | `examples/koi-pond/` | Living physics scene, original art, source map, and PAK |
+| `examples/koi-pond-caps-indicator/` | Koi Pond variant with a persistent Caps Lock toggle |
 | `layout/` | Calibrated display geometry and native index map |
 | `schemas/` | JSON contracts for skins, profiles, and themes |
 | `tools/cppro_skin_kit.py` | Validate, preview, and lock designer inputs |
@@ -124,7 +132,8 @@ python -m venv .venv
 
 Start with [Getting Started](docs/getting-started.md), then read the
 [Authoring Guide](docs/authoring-guide.md) and
-[Safety and Compatibility](docs/safety-and-compatibility.md).
+[Safety and Compatibility](docs/safety-and-compatibility.md). Particle-effect
+authors should also read the [Niagara guide](docs/niagara.md).
 
 ## Keyfield A2
 
@@ -150,6 +159,18 @@ Its exact release PAK, editable UE4.27 assets, canonical map snapshot,
 ChatGPT-created source artwork, generated animation frames, and reproduction
 tool are included. See
 [examples/koi-pond/README.md](examples/koi-pond/README.md).
+
+## Koi Pond: Caps Indicator
+
+This additional example retains the complete Koi Pond experience and adds an
+orange translucent state layer under the physical Caps Lock key. A dedicated
+integer state and press-edge latch make the indicator alternate once per
+physical press even when the analog keyboard repeats actuated reports while a
+key is held.
+
+The state is device-session-local: the confirmed callback does not expose the
+host operating system's lock state or composed characters. See
+[examples/koi-pond-caps-indicator/README.md](examples/koi-pond-caps-indicator/README.md).
 
 ## License and support
 

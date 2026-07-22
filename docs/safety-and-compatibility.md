@@ -28,8 +28,24 @@ Centerpiece Pro, returned the device success status `00 00`, remounted, and
 remained stable during typing. That does not guarantee compatibility across all
 firmware revisions or future vendor updates.
 
+## Niagara compatibility
+
+CPU and GPU Niagara systems have been confirmed on the tested Centerpiece Pro.
+The successful matrix includes duplicated UE4.27 systems, alternate particle
+materials, solo components, desired-age hold, and direct stock systems.
+
+Niagara renders in the world scene, behind viewport UMG. A full-screen opaque
+UMG background can completely hide healthy active systems. Keep the world-facing
+portion of an overlay transparent or restrict opaque widgets to intentional
+HUD regions. See [Niagara](niagara.md).
+
+Niagara remains a bounded feature: preallocate components, use fixed pools,
+measure on hardware, and avoid treating one stress result as a guarantee for
+different emitters or materials.
+
 ## Technologies not established by this kit
 
 Networking, host data exchange, audio, persistence, Android APIs, native runtime
-code, and unrestricted Niagara use are not part of the stable example contract.
-Test such capabilities independently before combining them with a real skin.
+code, and unbounded runtime spawning are not part of the stable example
+contract. Test such capabilities independently before combining them with a
+real skin.
