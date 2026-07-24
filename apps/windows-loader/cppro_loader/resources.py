@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -14,11 +15,16 @@ def resource_path(relative: str) -> Path:
 
 
 def local_app_data() -> Path:
-    import os
-
-    base = os.environ.get("LOCALAPPDATA")
-    if not base:
-        base = str(Path.home() / "AppData" / "Local")
-    path = Path(base) / "CPPRO Skin Loader"
+    if sys.platform == "win32":
+        base = Path(
+            os.environ.get("LOCALAPPDATA")
+            or Path.home() / "AppData" / "Local"
+        )
+        path = base / "CPPRO Skin Loader"
+    elif sys.platform == "darwin":
+        path = Path.home() / "Library" / "Caches" / "CPPRO Skin Loader"
+    else:
+        base = Path(os.environ.get("XDG_CACHE_HOME") or Path.home() / ".cache")
+        path = base / "cppro-skin-loader"
     path.mkdir(parents=True, exist_ok=True)
     return path

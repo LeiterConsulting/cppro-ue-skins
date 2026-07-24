@@ -5,6 +5,7 @@ import struct
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from cppro_loader.catalog import (
     SORT_A_Z,
@@ -16,7 +17,15 @@ from cppro_loader.catalog import (
     download_skin,
     sort_skins,
 )
-from cppro_loader.device import PAYLOAD_LEN, build_reports, frame, parse_frame
+from cppro_loader.device import (
+    PAYLOAD_LEN,
+    _HidApiTransport,
+    _choose_device,
+    build_reports,
+    frame,
+    parse_frame,
+    upload_pak,
+)
 from cppro_loader.pak import PAK_MAGIC, inspect_pak, sha256_file
 
 
@@ -30,6 +39,47 @@ class FrameTests(unittest.TestCase):
         frame(0x10, b"x" * PAYLOAD_LEN)
         with self.assertRaises(ValueError):
             frame(0x10, b"x" * (PAYLOAD_LEN + 1))
+
+    def test_prefers_cppro_interface_one(self):
+        devices = [
+            {"path": b"interface-zero", "interface_number": 0},
+            {"path": b"interface-one", "interface_number": 1},
+        ]
+        self.assertEqual(_choose_device(devices)["interface_number"], 1)
+
+    def test_hidapi_transport_writes_full_report(self):
+        class Connection:
+            def __init__(self):
+                self.opened = None
+                self.written = []
+                self.closed = False
+
+            def open_path(self, path):
+                self.opened = path
+
+            def write(self, raw):
+                self.written.append(bytes(raw))
+                return len(raw)
+
+            def read(self, _length, _timeout):
+                return []
+
+            def close(self):
+                self.closed = True
+
+        connection = Connection()
+        hid_module = mock.Mock()
+        hid_module.device.return_value = connection
+        transport = _HidApiTransport(
+            {"path": b"cppro-interface-one"},
+            hid_module=hid_module,
+        )
+        raw = frame(0x01)
+        transport.send(raw)
+        transport.close()
+        self.assertEqual(connection.opened, b"cppro-interface-one")
+        self.assertEqual(connection.written, [raw])
+        self.assertTrue(connection.closed)
 
 
 class PakTests(unittest.TestCase):
@@ -62,6 +112,43 @@ class PakTests(unittest.TestCase):
             message_type, payload = parse_frame(reports[1])
             self.assertEqual(message_type, 0x10)
             self.assertEqual(json.loads(payload)["fileName"], "sample")
+
+    def test_upload_uses_platform_transport_contract(self):
+        class FakeTransport:
+            def __init__(self):
+                self.handler = None
+                self.sent = []
+                self.closed = False
+
+            def set_response_handler(self, handler):
+                self.handler = handler
+
+            def send(self, raw):
+                self.sent.append(raw)
+                parsed = parse_frame(raw)
+                if self.handler and parsed and parsed[0] == 0x20:
+                    self.handler(frame(0x20, b"\x00\x00"))
+
+            def close(self):
+                self.closed = True
+
+        with tempfile.TemporaryDirectory() as temp:
+            path = self.make_pak(Path(temp))
+            transport = FakeTransport()
+            with (
+                mock.patch(
+                    "cppro_loader.device.matching_devices",
+                    return_value=[{"path": b"fake", "interface_number": 1}],
+                ),
+                mock.patch(
+                    "cppro_loader.device._open_transport",
+                    return_value=transport,
+                ),
+            ):
+                info, result = upload_pak(path, 3, False)
+            self.assertEqual(info.version, 11)
+            self.assertGreater(result.sent_reports, 0)
+            self.assertTrue(transport.closed)
 
 
 class CatalogTests(unittest.TestCase):

@@ -1,0 +1,2 @@
+-r requirements-common.txt
+hidapi==0.15.0

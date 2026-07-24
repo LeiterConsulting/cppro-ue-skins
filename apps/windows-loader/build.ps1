@@ -16,7 +16,7 @@ if (-not (Test-Path -LiteralPath $Python -PathType Leaf)) {
   throw "Python environment not found: $Python"
 }
 if (-not $OutDir) {
-  $OutDir = Join-Path $repo 'artifacts\windows-loader'
+  $OutDir = Join-Path $repo 'artifacts\skin-loader\windows-x86_64'
 }
 
 & $Python (Join-Path $root 'make_icon.py')
@@ -26,6 +26,7 @@ if ($LASTEXITCODE -ne 0) {
 
 $icon = Join-Path $root 'assets\cppro-loader.ico'
 $catalog = Join-Path $repo 'catalog\skins.json'
+$assets = Join-Path $root 'assets'
 $work = Join-Path $root 'build'
 $spec = Join-Path $root 'spec'
 New-Item -ItemType Directory -Force -Path $OutDir, $work, $spec | Out-Null
@@ -56,7 +57,9 @@ $common = @(
   '--windowed',
   '--icon', $icon,
   '--paths', $root,
+  '--hidden-import', 'pywinusb.hid',
   '--add-data', "$catalog;catalog",
+  '--add-data', "$assets;assets",
   '--distpath', $OutDir,
   '--workpath', $work,
   '--specpath', $spec

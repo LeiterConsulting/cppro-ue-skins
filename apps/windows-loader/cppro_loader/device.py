@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import sys
 import threading
 import time
 import uuid
@@ -8,8 +9,6 @@ from dataclasses import dataclass
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Callable
-
-from pywinusb import hid  # type: ignore
 
 from .pak import PakInfo, inspect_pak
 
@@ -21,6 +20,7 @@ HEADER_LEN = 4
 PAYLOAD_LEN = REPORT_LEN - HEADER_LEN
 
 ProgressCallback = Callable[[float, str], None]
+ResponseCallback = Callable[[bytes], None]
 
 
 @dataclass(frozen=True)
@@ -60,25 +60,67 @@ def parse_frame(report: bytes) -> tuple[int, bytes] | None:
     return report[3], report[4 : 4 + length]
 
 
+def _load_pywinusb():
+    from pywinusb import hid  # type: ignore
+
+    return hid
+
+
+def _load_hidapi():
+    import hid  # type: ignore
+
+    return hid
+
+
+def backend_name() -> str:
+    return "pywinusb" if sys.platform == "win32" else "HIDAPI"
+
+
 def matching_devices():
-    return hid.HidDeviceFilter(
-        vendor_id=DEFAULT_VID,
-        product_id=DEFAULT_PID,
-    ).get_devices()
+    if sys.platform == "win32":
+        hid = _load_pywinusb()
+        return hid.HidDeviceFilter(
+            vendor_id=DEFAULT_VID,
+            product_id=DEFAULT_PID,
+        ).get_devices()
+    hid = _load_hidapi()
+    return hid.enumerate(DEFAULT_VID, DEFAULT_PID)
+
+
+def _interface_number(device) -> int | None:
+    if isinstance(device, dict):
+        value = device.get("interface_number")
+        return int(value) if isinstance(value, int) else None
+    path = str(getattr(device, "device_path", "")).upper()
+    return 1 if "MI_01" in path else None
+
+
+def _device_name(device) -> str:
+    if isinstance(device, dict):
+        value = device.get("product_string")
+    else:
+        value = getattr(device, "product_name", "")
+    return str(value or "Centerpiece Pro")
+
+
+def _choose_device(devices):
+    if not devices:
+        raise RuntimeError(
+            "No CPPRO was found. Connect the keyboard directly by USB and retry."
+        )
+    preferred = [device for device in devices if _interface_number(device) == 1]
+    return preferred[0] if preferred else devices[0]
 
 
 def detect_device() -> DeviceStatus:
-    devices = matching_devices()
+    try:
+        devices = matching_devices()
+    except (ImportError, OSError) as exc:
+        return DeviceStatus(False, 0, f"{backend_name()} unavailable: {exc}")
     if not devices:
         return DeviceStatus(False, 0, "CPPRO not found")
-    preferred = [
-        device
-        for device in devices
-        if "MI_01" in str(getattr(device, "device_path", "")).upper()
-    ]
-    device = preferred[0] if preferred else devices[0]
-    name = str(getattr(device, "product_name", "") or "Centerpiece Pro")
-    return DeviceStatus(True, len(devices), name)
+    device = _choose_device(devices)
+    return DeviceStatus(True, len(devices), _device_name(device))
 
 
 def build_reports(slot: int, pak: Path) -> tuple[list[bytes], dict]:
@@ -109,19 +151,6 @@ def build_reports(slot: int, pak: Path) -> tuple[list[bytes], dict]:
     return reports, metadata
 
 
-def _choose_device(devices):
-    if not devices:
-        raise RuntimeError(
-            "No CPPRO was found. Connect the keyboard directly by USB and retry."
-        )
-    preferred = [
-        device
-        for device in devices
-        if "MI_01" in str(getattr(device, "device_path", "")).upper()
-    ]
-    return preferred[0] if preferred else devices[0]
-
-
 def _output_report(device):
     candidates = []
     for report in device.find_output_reports() or []:
@@ -139,18 +168,112 @@ def _output_report(device):
     return candidates[0]
 
 
+class _WindowsTransport:
+    def __init__(self, candidate) -> None:
+        self.device = candidate
+        self.device.open()
+        self.report = _output_report(self.device)
+
+    def set_response_handler(self, handler: ResponseCallback | None) -> None:
+        if handler is None:
+            self.device.set_raw_data_handler(None)
+            return
+
+        def receive(data) -> None:
+            try:
+                handler(bytes(int(value) & 0xFF for value in data))
+            except Exception:
+                return
+
+        self.device.set_raw_data_handler(receive)
+
+    def send(self, raw: bytes) -> None:
+        self.report.send(list(raw))
+
+    def close(self) -> None:
+        self.device.close()
+
+
+class _HidApiTransport:
+    def __init__(self, candidate, hid_module=None) -> None:
+        self.hid = hid_module or _load_hidapi()
+        self.device = self.hid.device()
+        path = candidate.get("path")
+        if path is None:
+            raise RuntimeError("The CPPRO HID interface did not provide a device path.")
+        try:
+            self.device.open_path(path)
+        except OSError as exc:
+            if sys.platform.startswith("linux"):
+                raise PermissionError(
+                    "The CPPRO was found but could not be opened. Install the "
+                    "included Linux udev rule, reconnect the keyboard, and retry."
+                ) from exc
+            raise
+        self.stop = threading.Event()
+        self.reader: threading.Thread | None = None
+        self.handler: ResponseCallback | None = None
+
+    def set_response_handler(self, handler: ResponseCallback | None) -> None:
+        self.handler = handler
+        if handler is None:
+            self.stop.set()
+            if self.reader and self.reader.is_alive():
+                self.reader.join(timeout=0.5)
+            self.reader = None
+            return
+        if self.reader and self.reader.is_alive():
+            return
+        self.stop.clear()
+        self.reader = threading.Thread(
+            target=self._read_loop,
+            name="cppro-hid-reader",
+            daemon=True,
+        )
+        self.reader.start()
+
+    def _read_loop(self) -> None:
+        while not self.stop.is_set():
+            try:
+                data = self.device.read(REPORT_LEN, 100)
+            except (OSError, ValueError):
+                return
+            if data and self.handler:
+                try:
+                    self.handler(bytes(int(value) & 0xFF for value in data))
+                except Exception:
+                    continue
+
+    def send(self, raw: bytes) -> None:
+        try:
+            written = self.device.write(raw)
+        except TypeError:
+            written = self.device.write(list(raw))
+        if written not in (None, len(raw)):
+            raise OSError(
+                f"The CPPRO accepted {written} of {len(raw)} HID report bytes."
+            )
+
+    def close(self) -> None:
+        self.set_response_handler(None)
+        self.device.close()
+
+
+def _open_transport(candidate):
+    if sys.platform == "win32":
+        return _WindowsTransport(candidate)
+    return _HidApiTransport(candidate)
+
+
 class _ResponseMonitor:
-    def __init__(self, device) -> None:
+    def __init__(self, transport) -> None:
         self.ack = threading.Event()
         self.complete = threading.Event()
         self.failed_payload: bytes | None = None
-        device.set_raw_data_handler(self._handle)
+        transport.set_response_handler(self._handle)
 
-    def _handle(self, data) -> None:
-        try:
-            parsed = parse_frame(bytes(int(value) & 0xFF for value in data))
-        except Exception:
-            return
+    def _handle(self, data: bytes) -> None:
+        parsed = parse_frame(data)
         if parsed is None:
             return
         message_type, payload = parsed
@@ -167,9 +290,9 @@ class _ResponseMonitor:
         return observed
 
 
-def _select_slot(report, slot: int) -> None:
+def _select_slot(transport, slot: int) -> None:
     for candidate in (slot, slot - 1):
-        report.send(list(frame(0x30, bytes([candidate]))))
+        transport.send(frame(0x30, bytes([candidate])))
         time.sleep(0.05)
 
 
@@ -204,9 +327,8 @@ def upload_pak(
 
     devices = matching_devices()
     device = _choose_device(devices)
-    device.open()
-    monitor = _ResponseMonitor(device)
-    report = _output_report(device)
+    transport = _open_transport(device)
+    monitor = _ResponseMonitor(transport)
     sent = 0
     started = time.time()
     window = 64
@@ -215,7 +337,7 @@ def upload_pak(
     try:
         for offset in range(0, len(reports), window):
             for raw in reports[offset : offset + window]:
-                report.send(list(raw))
+                transport.send(raw)
                 sent += 1
             emit(
                 0.05 + 0.90 * (sent / len(reports)),
@@ -243,15 +365,15 @@ def upload_pak(
         if activate:
             emit(0.98, f"Activating slot {slot}…")
             bounce = 1 if slot != 1 else 2
-            _select_slot(report, bounce)
+            _select_slot(transport, bounce)
             time.sleep(0.25)
-            _select_slot(report, slot)
+            _select_slot(transport, slot)
     finally:
         try:
-            device.set_raw_data_handler(None)
+            transport.set_response_handler(None)
         except Exception:
             pass
-        device.close()
+        transport.close()
 
     duration = time.time() - started
     emit(1.0, f"Installed successfully in slot {slot}")

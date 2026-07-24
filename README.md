@@ -31,11 +31,13 @@ includes its original artwork, generated animation frames, frame-preparation
 tool, editable UE4.27 assets, and canonical source-map snapshot. Browse the
 complete [examples index](examples/README.md) for controls and source contents.
 
-## Windows skin loader
+## Desktop skin loader
 
-[CPPRO Skin Loader](apps/windows-loader/README.md) is the dead-simple Windows
-path: download one portable executable, choose a developer skin or local
-`.pak`, choose slot 1–5, and send it to the keyboard.
+[CPPRO Skin Loader](apps/windows-loader/README.md) is the dead-simple desktop
+path: choose a developer skin or local `.pak`, choose slot 1–5, and send it to
+the keyboard. Windows is physically confirmed; Linux/WSL and Apple Silicon and
+Intel macOS candidates share the same protocol implementation and packaging
+pipeline.
 
 The application retrieves its library when it opens, so newly published skins
 appear without an application update. The library is scrollable and sortable
@@ -80,7 +82,7 @@ firmware proves otherwise.
 | `examples/koi-pond-caps-indicator/` | Koi Pond variant with a persistent Caps Lock toggle |
 | `examples/SKIN_STANDARD.md` | Contract and checklist for publishing a library skin |
 | `catalog/skins.json` | Generated catalog consumed by the Windows loader |
-| `apps/windows-loader/` | Portable Windows skin library and slot loader |
+| `apps/windows-loader/` | Cross-platform skin library and slot loader |
 | `layout/` | Calibrated display geometry and native index map |
 | `schemas/` | JSON contracts for skins, profiles, and themes |
 | `tools/build-skin-catalog.py` | Validate examples and generate the loader catalog |

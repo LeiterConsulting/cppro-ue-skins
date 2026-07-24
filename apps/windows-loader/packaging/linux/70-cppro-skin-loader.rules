@@ -1,0 +1,2 @@
+# Finalmouse Centerpiece Pro — allow the logged-in desktop user to open hidraw.
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="361d", ATTRS{idProduct}=="0202", TAG+="uaccess", MODE="0660"

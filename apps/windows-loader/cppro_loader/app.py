@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import platform
 import tkinter as tk
 import webbrowser
 from datetime import datetime
@@ -18,6 +19,7 @@ from .catalog import (
 )
 from .device import DeviceStatus, detect_device, upload_pak
 from .pak import inspect_pak
+from .resources import resource_path
 from .ui_common import (
     COLORS,
     BackgroundJobs,
@@ -39,6 +41,13 @@ class SkinLibrary(tk.Tk):
         self.geometry("1180x760")
         self.minsize(1040, 680)
         self.configure(bg=COLORS["canvas"])
+        try:
+            icon = resource_path("assets/cppro-loader.png")
+            if not icon.is_file():
+                icon = Path(__file__).resolve().parents[1] / "assets" / "cppro-loader.png"
+            self.iconphoto(True, tk.PhotoImage(file=icon))
+        except tk.TclError:
+            pass
         configure_ttk(self)
         self.jobs = BackgroundJobs(self)
 
@@ -90,7 +99,8 @@ class SkinLibrary(tk.Tk):
         tk.Label(
             sidebar,
             text=(
-                f"Version {APP_VERSION}\n\n"
+                f"Version {APP_VERSION}\n"
+                f"{platform.system()}\n\n"
                 "Independent community tool\n"
                 "Not an official Finalmouse app"
             ),
@@ -646,7 +656,7 @@ class SkinLibrary(tk.Tk):
     def _device_loaded(self, status: DeviceStatus) -> None:
         self.device_status = status
         self.device_label.configure(
-            text=("●  CPPRO connected" if status.connected else "●  CPPRO not found"),
+            text=("●  CPPRO connected" if status.connected else f"●  {status.name}"),
             fg=COLORS["success"] if status.connected else COLORS["danger"],
         )
 
