@@ -40,6 +40,27 @@ windowing, acknowledgement handling, completion check, and slot activation
 sequence. Until a real upload is completed on each OS, they remain candidates
 rather than device-confirmed releases.
 
+## Download
+
+Download the current cross-platform beta from
+[v0.2.0-beta.1](https://github.com/LeiterConsulting/cppro-ue-skins/releases/tag/v0.2.0-beta.1):
+
+- Windows: `CPPRO-Skin-Loader-Windows-x86_64.exe`
+- Apple Silicon Mac: `CPPRO-Skin-Loader-macOS-arm64.dmg`
+- Intel Mac: `CPPRO-Skin-Loader-macOS-x86_64.dmg`
+- Linux x86-64: `CPPRO-Skin-Loader-Linux-x86_64`
+
+On Linux, make the download executable before launching it:
+
+```bash
+chmod +x CPPRO-Skin-Loader-Linux-x86_64
+./CPPRO-Skin-Loader-Linux-x86_64
+```
+
+Install the release's `70-cppro-skin-loader.rules` file before attempting a
+real Linux upload. Verify all downloads against the included
+`SHA256SUMS.txt`.
+
 ## Run from source
 
 ### Windows

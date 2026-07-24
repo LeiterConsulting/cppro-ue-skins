@@ -41,8 +41,9 @@ pipeline.
 
 The application retrieves its library when it opens, so newly published skins
 appear without an application update. The library is scrollable and sortable
-by newest, A–Z, or GitHub Release download count. Download the current binary
-from the [latest release](https://github.com/LeiterConsulting/cppro-ue-skins/releases/latest).
+by newest, A–Z, or GitHub Release download count. Download the current
+cross-platform candidate from the
+[v0.2.0-beta.1 prerelease](https://github.com/LeiterConsulting/cppro-ue-skins/releases/tag/v0.2.0-beta.1).
 
 New examples follow one documented
 [skin library standard](examples/SKIN_STANDARD.md). A generator validates their
