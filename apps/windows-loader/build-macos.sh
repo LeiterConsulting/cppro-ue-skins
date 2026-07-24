@@ -48,5 +48,5 @@ hdiutil create \
   -format UDZO \
   "$dmg"
 
-shasum -a 256 "$dmg" > "$out_dir/SHA256SUMS.txt"
+(cd "$out_dir" && shasum -a 256 "$(basename "$dmg")" > "SHA256SUMS.txt")
 ls -lh "$dmg" "$out_dir/SHA256SUMS.txt"

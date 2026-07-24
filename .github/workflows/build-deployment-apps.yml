@@ -43,5 +43,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: cppro-skin-loader-${{ matrix.platform }}
-          path: ${{ matrix.artifact_path }}
+          path: |
+            ${{ matrix.artifact_path }}/CPPRO-Skin-Loader*
+            ${{ matrix.artifact_path }}/SHA256SUMS.txt
           if-no-files-found: error

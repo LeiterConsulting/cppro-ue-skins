@@ -31,6 +31,6 @@ mkdir -p "$out_dir" "$work_dir" "$spec_dir"
   --specpath "$spec_dir" \
   "$root/entry.py"
 
-sha256sum "$out_dir/CPPRO-Skin-Loader" > "$out_dir/SHA256SUMS.txt"
 chmod +x "$out_dir/CPPRO-Skin-Loader"
+(cd "$out_dir" && sha256sum "CPPRO-Skin-Loader" > "SHA256SUMS.txt")
 ls -lh "$out_dir/CPPRO-Skin-Loader" "$out_dir/SHA256SUMS.txt"
