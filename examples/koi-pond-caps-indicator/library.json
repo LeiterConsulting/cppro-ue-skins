@@ -1,0 +1,16 @@
+{
+  "schema": "cppro-skin-library-entry",
+  "version": 1,
+  "id": "koi-pond-caps-indicator",
+  "name": "Koi Pond: Caps Indicator",
+  "subtitle": "Koi Pond with visible Caps state",
+  "description": "The complete Koi Pond experience plus an edge-latched, session-local indicator beneath the physical Caps Lock key.",
+  "tags": ["Ambient", "Caps indicator", "Animated"],
+  "accent": "#E59B2F",
+  "published_at": "2026-07-22T18:54:40-04:00",
+  "pak": "release/cppro_koi_pond_caps_indicator.pak",
+  "release": {
+    "tag": "v0.1.0",
+    "asset": "cppro_koi_pond_caps_indicator.pak"
+  }
+}

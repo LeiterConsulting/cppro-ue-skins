@@ -1,0 +1,96 @@
+{
+  "schema": "cppro-skin-catalog",
+  "version": 1,
+  "repository": "https://github.com/LeiterConsulting/cppro-ue-skins",
+  "releases_api": "https://api.github.com/repos/LeiterConsulting/cppro-ue-skins/releases?per_page=100",
+  "skins": [
+    {
+      "id": "keyfield-pulse",
+      "name": "Keyfield Pulse",
+      "subtitle": "Clean daily-use reactive keyfield",
+      "description": "Always-live key lights, hold-sensitive releases, three-stage waves, and a session-local Caps Lock indicator.",
+      "tags": [
+        "Reactive",
+        "Caps indicator",
+        "Daily use"
+      ],
+      "filename": "cppro_keyfield_pulse.pak",
+      "bytes": 32164255,
+      "sha256": "2E2FB2C4D58FE1E87DE4287BE9A953B2C7E34DEA73965CE4C9C1822EA4B716B8",
+      "source_path": "examples/keyfield-pulse/release/cppro_keyfield_pulse.pak",
+      "download_url": "https://github.com/LeiterConsulting/cppro-ue-skins/releases/download/v0.1.0/cppro_keyfield_pulse.pak",
+      "docs_url": "https://github.com/LeiterConsulting/cppro-ue-skins/tree/main/examples/keyfield-pulse",
+      "accent": "#18A7C9",
+      "published_at": "2026-07-22T19:24:21-04:00",
+      "release_tag": "v0.1.0",
+      "release_asset": "cppro_keyfield_pulse.pak",
+      "downloads": 0
+    },
+    {
+      "id": "koi-pond-caps-indicator",
+      "name": "Koi Pond: Caps Indicator",
+      "subtitle": "Koi Pond with visible Caps state",
+      "description": "The complete Koi Pond experience plus an edge-latched, session-local indicator beneath the physical Caps Lock key.",
+      "tags": [
+        "Ambient",
+        "Caps indicator",
+        "Animated"
+      ],
+      "filename": "cppro_koi_pond_caps_indicator.pak",
+      "bytes": 33590359,
+      "sha256": "BA28F85334051C9B3B8742C407F22BCE7EFD996B0DB57DE05B679EE0CA0602A9",
+      "source_path": "examples/koi-pond-caps-indicator/release/cppro_koi_pond_caps_indicator.pak",
+      "download_url": "https://github.com/LeiterConsulting/cppro-ue-skins/releases/download/v0.1.0/cppro_koi_pond_caps_indicator.pak",
+      "docs_url": "https://github.com/LeiterConsulting/cppro-ue-skins/tree/main/examples/koi-pond-caps-indicator",
+      "accent": "#E59B2F",
+      "published_at": "2026-07-22T18:54:40-04:00",
+      "release_tag": "v0.1.0",
+      "release_asset": "cppro_koi_pond_caps_indicator.pak",
+      "downloads": 0
+    },
+    {
+      "id": "koi-pond",
+      "name": "Koi Pond",
+      "subtitle": "Living full-keyboard pond",
+      "description": "Six animated koi swim across a full-screen underwater scene while key presses create localized ripples and impulses.",
+      "tags": [
+        "Ambient",
+        "Physics",
+        "Animated"
+      ],
+      "filename": "cppro_koi_pond.pak",
+      "bytes": 33011080,
+      "sha256": "55768C1CEA8B41FD79377778E45DEDEE2AF9B1D40DF06C1274BE7F8272F5D7FC",
+      "source_path": "examples/koi-pond/release/cppro_koi_pond.pak",
+      "download_url": "https://github.com/LeiterConsulting/cppro-ue-skins/releases/download/v0.1.0/cppro_koi_pond.pak",
+      "docs_url": "https://github.com/LeiterConsulting/cppro-ue-skins/tree/main/examples/koi-pond",
+      "accent": "#2A9D77",
+      "published_at": "2026-07-18T11:34:32-04:00",
+      "release_tag": "v0.1.0",
+      "release_asset": "cppro_koi_pond.pak",
+      "downloads": 0
+    },
+    {
+      "id": "keyfield-a2",
+      "name": "Keyfield A2",
+      "subtitle": "Interactive authoring reference",
+      "description": "All 68 mapped keys, bounded effects, palettes, readable safe regions, and Ready, Live, and Paused application states.",
+      "tags": [
+        "Reference",
+        "Profiles",
+        "Mapped keys"
+      ],
+      "filename": "cppro_keyfield_a2.pak",
+      "bytes": 31638130,
+      "sha256": "639F4258E74B0230C37D7F62F8AB541D6B8E829CAC6CA1D19A7E5E36D4BDFDA4",
+      "source_path": "examples/keyfield-a2/release/cppro_keyfield_a2.pak",
+      "download_url": "https://github.com/LeiterConsulting/cppro-ue-skins/releases/download/v0.1.0/cppro_keyfield_a2.pak",
+      "docs_url": "https://github.com/LeiterConsulting/cppro-ue-skins/tree/main/examples/keyfield-a2",
+      "accent": "#8A63D2",
+      "published_at": "2026-07-17T15:56:32-04:00",
+      "release_tag": "v0.1.0",
+      "release_asset": "cppro_keyfield_a2.pak",
+      "downloads": 0
+    }
+  ]
+}

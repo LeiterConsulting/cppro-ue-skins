@@ -1,0 +1,16 @@
+{
+  "schema": "cppro-skin-library-entry",
+  "version": 1,
+  "id": "keyfield-a2",
+  "name": "Keyfield A2",
+  "subtitle": "Interactive authoring reference",
+  "description": "All 68 mapped keys, bounded effects, palettes, readable safe regions, and Ready, Live, and Paused application states.",
+  "tags": ["Reference", "Profiles", "Mapped keys"],
+  "accent": "#8A63D2",
+  "published_at": "2026-07-17T15:56:32-04:00",
+  "pak": "release/cppro_keyfield_a2.pak",
+  "release": {
+    "tag": "v0.1.0",
+    "asset": "cppro_keyfield_a2.pak"
+  }
+}

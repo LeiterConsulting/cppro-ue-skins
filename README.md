@@ -31,6 +31,22 @@ includes its original artwork, generated animation frames, frame-preparation
 tool, editable UE4.27 assets, and canonical source-map snapshot. Browse the
 complete [examples index](examples/README.md) for controls and source contents.
 
+## Windows skin loader
+
+[CPPRO Skin Loader](apps/windows-loader/README.md) is the dead-simple Windows
+path: download one portable executable, choose a developer skin or local
+`.pak`, choose slot 1–5, and send it to the keyboard.
+
+The application retrieves its library when it opens, so newly published skins
+appear without an application update. The library is scrollable and sortable
+by newest, A–Z, or GitHub Release download count. Download the current binary
+from the [latest release](https://github.com/LeiterConsulting/cppro-ue-skins/releases/latest).
+
+New examples follow one documented
+[skin library standard](examples/SKIN_STANDARD.md). A generator validates their
+metadata, PAK version, checksum, and release information, then produces the
+catalog consumed by the application.
+
 ## What works
 
 - UE4.27 Android ASTC content packaged as PAK version 11.
@@ -62,8 +78,12 @@ firmware proves otherwise.
 | `examples/keyfield-pulse/` | Clean always-live keyfield skin with Caps state |
 | `examples/koi-pond/` | Living physics scene, original art, source map, and PAK |
 | `examples/koi-pond-caps-indicator/` | Koi Pond variant with a persistent Caps Lock toggle |
+| `examples/SKIN_STANDARD.md` | Contract and checklist for publishing a library skin |
+| `catalog/skins.json` | Generated catalog consumed by the Windows loader |
+| `apps/windows-loader/` | Portable Windows skin library and slot loader |
 | `layout/` | Calibrated display geometry and native index map |
 | `schemas/` | JSON contracts for skins, profiles, and themes |
+| `tools/build-skin-catalog.py` | Validate examples and generate the loader catalog |
 | `tools/cppro_skin_kit.py` | Validate, preview, and lock designer inputs |
 | `tools/build-pak.ps1` | Cook Android ASTC and create a slot-compatible PAK |
 | `tools/verify-pak.ps1` | Check integrity, mount layout, map, and SHA-256 |

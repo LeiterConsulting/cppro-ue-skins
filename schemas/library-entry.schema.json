@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cppro.dev/schemas/library-entry.schema.json",
+  "title": "CPPRO skin library entry",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "id",
+    "name",
+    "subtitle",
+    "description",
+    "tags",
+    "accent",
+    "published_at",
+    "pak",
+    "release"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "cppro-skin-library-entry" },
+    "version": { "const": 1 },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 48 },
+    "subtitle": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "description": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 24 }
+    },
+    "accent": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "pak": {
+      "type": "string",
+      "pattern": "^release/[A-Za-z0-9._-]+\\.pak$"
+    },
+    "release": {
+      "type": "object",
+      "required": ["tag", "asset"],
+      "additionalProperties": false,
+      "properties": {
+        "tag": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "asset": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]+\\.pak$"
+        }
+      }
+    }
+  }
+}

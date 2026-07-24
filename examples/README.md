@@ -4,6 +4,11 @@ Every example is a curated, device-tested starting point rather than a dump of
 development experiments. Each folder documents the interaction model, source
 assets, exact release PAK, checksum, and any important runtime limitations.
 
+Every installable example also follows the
+[skin library standard](SKIN_STANDARD.md). Its `library.json` entry is compiled
+into the Windows loader catalog, so adding an example does not require editing
+the application.
+
 | Example | Start here when you want to build | Device-tested slot |
 | --- | --- | ---: |
 | [Keyfield A2](keyfield-a2/README.md) | An app-like skin with all 68 keys, modes, palettes, readable safe-region UI, and bounded press/release effects | 5 |

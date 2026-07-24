@@ -1,0 +1,28 @@
+name: Validate skin library
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check generated catalog
+        run: python tools/build-skin-catalog.py --check
+      - name: Verify catalog PAKs
+        run: python apps/windows-loader/verify_catalog.py
+      - name: Test loader core
+        env:
+          PYTHONPATH: apps/windows-loader
+        run: python -m unittest discover -s apps/windows-loader/tests -v
+      - name: Test reference runtime
+        run: python -m unittest discover -s reference/runtime -v

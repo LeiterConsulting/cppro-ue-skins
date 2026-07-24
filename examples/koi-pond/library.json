@@ -1,0 +1,16 @@
+{
+  "schema": "cppro-skin-library-entry",
+  "version": 1,
+  "id": "koi-pond",
+  "name": "Koi Pond",
+  "subtitle": "Living full-keyboard pond",
+  "description": "Six animated koi swim across a full-screen underwater scene while key presses create localized ripples and impulses.",
+  "tags": ["Ambient", "Physics", "Animated"],
+  "accent": "#2A9D77",
+  "published_at": "2026-07-18T11:34:32-04:00",
+  "pak": "release/cppro_koi_pond.pak",
+  "release": {
+    "tag": "v0.1.0",
+    "asset": "cppro_koi_pond.pak"
+  }
+}

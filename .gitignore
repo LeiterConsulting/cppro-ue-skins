@@ -8,6 +8,7 @@ Saved/
 # Local build output
 /artifacts/
 /.venv/
+apps/windows-loader/spec/
 __pycache__/
 *.py[cod]
 

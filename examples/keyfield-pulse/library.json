@@ -1,0 +1,16 @@
+{
+  "schema": "cppro-skin-library-entry",
+  "version": 1,
+  "id": "keyfield-pulse",
+  "name": "Keyfield Pulse",
+  "subtitle": "Clean daily-use reactive keyfield",
+  "description": "Always-live key lights, hold-sensitive releases, three-stage waves, and a session-local Caps Lock indicator.",
+  "tags": ["Reactive", "Caps indicator", "Daily use"],
+  "accent": "#18A7C9",
+  "published_at": "2026-07-22T19:24:21-04:00",
+  "pak": "release/cppro_keyfield_pulse.pak",
+  "release": {
+    "tag": "v0.1.0",
+    "asset": "cppro_keyfield_pulse.pak"
+  }
+}
