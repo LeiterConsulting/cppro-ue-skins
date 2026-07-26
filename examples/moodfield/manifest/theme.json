@@ -1,0 +1,21 @@
+{
+  "schema": "cppro-theme",
+  "version": 1,
+  "name": "moodfield-living",
+  "background": "#020513FF",
+  "text": "#FFFFFFFF",
+  "row_colors": [
+    "#23B8C6CC",
+    "#35D7B7CC",
+    "#A63DFFCC",
+    "#FF6D19CC",
+    "#356FE8CC"
+  ],
+  "palettes": [
+    {
+      "id": "living",
+      "label": "LIVING",
+      "accent": "#A63DFFFF"
+    }
+  ]
+}

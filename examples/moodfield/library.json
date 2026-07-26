@@ -1,0 +1,16 @@
+{
+  "schema": "cppro-skin-library-entry",
+  "version": 1,
+  "id": "moodfield",
+  "name": "Moodfield",
+  "subtitle": "Adaptive living typing surface",
+  "description": "A breathing substrate that learns typing geography, recognizes compact control patterns, and turns cadence, repetition, and pauses into persistent color moods.",
+  "tags": ["Adaptive", "Reactive", "Caps indicator", "Daily use"],
+  "accent": "#A63DFF",
+  "published_at": "2026-07-26T14:54:57-04:00",
+  "pak": "release/cppro_moodfield.pak",
+  "release": {
+    "tag": "v0.2.0",
+    "asset": "cppro_moodfield.pak"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "cppro-profile",
+  "version": 1,
+  "name": "moodfield",
+  "bindings": {
+    "w": "contribute_game_focus_w",
+    "a": "contribute_game_focus_a",
+    "s": "contribute_game_focus_s",
+    "d": "contribute_game_focus_d",
+    "arrow_left": "contribute_navigation_focus",
+    "caps_lock": "toggle_caps_indicator"
+  }
+}

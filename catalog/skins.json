@@ -5,6 +5,29 @@
   "releases_api": "https://api.github.com/repos/LeiterConsulting/cppro-ue-skins/releases?per_page=100",
   "skins": [
     {
+      "id": "moodfield",
+      "name": "Moodfield",
+      "subtitle": "Adaptive living typing surface",
+      "description": "A breathing substrate that learns typing geography, recognizes compact control patterns, and turns cadence, repetition, and pauses into persistent color moods.",
+      "tags": [
+        "Adaptive",
+        "Reactive",
+        "Caps indicator",
+        "Daily use"
+      ],
+      "filename": "cppro_moodfield.pak",
+      "bytes": 32198369,
+      "sha256": "EE43EE4EE0BCE6B3F2BFB67A8B3F174AE00ED2B59E896235AF6B454D92D2C6F5",
+      "source_path": "examples/moodfield/release/cppro_moodfield.pak",
+      "download_url": "https://github.com/LeiterConsulting/cppro-ue-skins/releases/download/v0.2.0/cppro_moodfield.pak",
+      "docs_url": "https://github.com/LeiterConsulting/cppro-ue-skins/tree/main/examples/moodfield",
+      "accent": "#A63DFF",
+      "published_at": "2026-07-26T14:54:57-04:00",
+      "release_tag": "v0.2.0",
+      "release_asset": "cppro_moodfield.pak",
+      "downloads": 0
+    },
+    {
       "id": "keyfield-pulse",
       "name": "Keyfield Pulse",
       "subtitle": "Clean daily-use reactive keyfield",

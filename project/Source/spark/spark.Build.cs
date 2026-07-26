@@ -16,5 +16,15 @@ public class spark : ModuleRules
             "Slate",
             "SlateCore"
         });
+
+        if (Target.bBuildEditor)
+        {
+            PrivateDependencyModuleNames.AddRange(new string[]
+            {
+                "BlueprintGraph",
+                "UMGEditor",
+                "UnrealEd"
+            });
+        }
     }
 }
