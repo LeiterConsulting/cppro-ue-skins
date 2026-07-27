@@ -22,9 +22,10 @@ The library interface provides:
 - progress, completion, and actionable error states;
 - `--demo` mode, which exercises the workflow without touching a keyboard.
 
-The online catalog is refreshed when the application opens. A newly published
-example can therefore appear without rebuilding or redistributing the desktop
-application. See the [skin library standard](../../examples/SKIN_STANDARD.md).
+The online catalog is refreshed when the application opens and whenever the
+Refresh button is pressed. A newly published example can therefore appear
+without rebuilding or redistributing the desktop application. See the
+[skin library standard](../../examples/SKIN_STANDARD.md).
 
 ## Platform status
 
@@ -43,7 +44,7 @@ rather than device-confirmed releases.
 ## Download
 
 Download the current cross-platform beta from
-[v0.2.0-beta.1](https://github.com/LeiterConsulting/cppro-ue-skins/releases/tag/v0.2.0-beta.1):
+[v0.2.0-beta.2](https://github.com/LeiterConsulting/cppro-ue-skins/releases/tag/v0.2.0-beta.2):
 
 - Windows: `CPPRO-Skin-Loader-Windows-x86_64.exe`
 - Apple Silicon Mac: `CPPRO-Skin-Loader-macOS-arm64.dmg`

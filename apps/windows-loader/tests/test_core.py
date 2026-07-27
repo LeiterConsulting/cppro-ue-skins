@@ -8,6 +8,7 @@ from pathlib import Path
 from unittest import mock
 
 from cppro_loader.catalog import (
+    REMOTE_CATALOG,
     SORT_A_Z,
     SORT_DOWNLOADS,
     SORT_NEWEST,
@@ -15,6 +16,7 @@ from cppro_loader.catalog import (
     _enrich_downloads,
     _parse_catalog,
     download_skin,
+    load_catalog,
     sort_skins,
 )
 from cppro_loader.device import (
@@ -284,6 +286,62 @@ class CatalogTests(unittest.TestCase):
             [skin.id for skin in sort_skins(skins, SORT_DOWNLOADS)],
             ["beta", "alpha", "charlie"],
         )
+
+    def test_forced_refresh_bypasses_cached_catalog(self):
+        class Response:
+            def __init__(self, payload):
+                self.payload = payload
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return False
+
+            def read(self):
+                return self.payload
+
+        catalog_payload = json.dumps(
+            {
+                "schema": "cppro-skin-catalog",
+                "version": 1,
+                "skins": [self.entry()],
+            }
+        ).encode()
+        with (
+            mock.patch(
+                "cppro_loader.catalog.time.time_ns",
+                return_value=123456789,
+            ),
+            mock.patch(
+                "cppro_loader.catalog.urllib.request.urlopen",
+                side_effect=[
+                    Response(catalog_payload),
+                    Response(b"[]"),
+                ],
+            ) as urlopen,
+        ):
+            skins, source = load_catalog(force_refresh=True)
+
+        catalog_request = urlopen.call_args_list[0].args[0]
+        self.assertEqual(
+            catalog_request.full_url,
+            f"{REMOTE_CATALOG}?refresh=123456789",
+        )
+        self.assertEqual(catalog_request.get_header("Cache-control"), "no-cache")
+        self.assertEqual(catalog_request.get_header("Pragma"), "no-cache")
+        self.assertEqual([skin.id for skin in skins], ["skin"])
+        self.assertEqual(source, "Online library • live download counts")
+
+
+class AppRefreshTests(unittest.TestCase):
+    def test_refresh_control_updates_catalog_and_device(self):
+        from cppro_loader.app import SkinLibrary
+
+        app = mock.Mock()
+        SkinLibrary._refresh_all(app)
+        app._refresh_catalog.assert_called_once_with(force_refresh=True)
+        app._refresh_device.assert_called_once_with()
 
 
 if __name__ == "__main__":

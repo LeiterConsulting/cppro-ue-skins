@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass, replace
@@ -187,10 +188,23 @@ def sort_skins(skins: list[Skin], order: str) -> list[Skin]:
     )
 
 
-def load_catalog(timeout: float = 4.0) -> tuple[list[Skin], str]:
+def load_catalog(
+    timeout: float = 4.0,
+    force_refresh: bool = False,
+) -> tuple[list[Skin], str]:
+    catalog_url = REMOTE_CATALOG
+    headers = {"User-Agent": "CPPRO-Skin-Loader/0.1"}
+    if force_refresh:
+        catalog_url = f"{catalog_url}?refresh={time.time_ns()}"
+        headers.update(
+            {
+                "Cache-Control": "no-cache",
+                "Pragma": "no-cache",
+            }
+        )
     request = urllib.request.Request(
-        REMOTE_CATALOG,
-        headers={"User-Agent": "CPPRO-Skin-Loader/0.1"},
+        catalog_url,
+        headers=headers,
     )
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:

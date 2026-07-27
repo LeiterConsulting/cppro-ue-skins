@@ -42,11 +42,11 @@ the keyboard. Windows is physically confirmed; Linux/WSL and Apple Silicon and
 Intel macOS candidates share the same protocol implementation and packaging
 pipeline.
 
-The application retrieves its library when it opens, so newly published skins
-appear without an application update. The library is scrollable and sortable
-by newest, A–Z, or GitHub Release download count. Download the current
-cross-platform candidate from the
-[v0.2.0-beta.1 prerelease](https://github.com/LeiterConsulting/cppro-ue-skins/releases/tag/v0.2.0-beta.1).
+The application retrieves its library when it opens and whenever Refresh is
+pressed, so newly published skins appear without an application update. The
+library is scrollable and sortable by newest, A–Z, or GitHub Release download
+count. Download the current cross-platform candidate from the
+[v0.2.0-beta.2 prerelease](https://github.com/LeiterConsulting/cppro-ue-skins/releases/tag/v0.2.0-beta.2).
 
 New examples follow one documented
 [skin library standard](examples/SKIN_STANDARD.md). A generator validates their

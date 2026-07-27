@@ -59,6 +59,7 @@ class SkinLibrary(tk.Tk):
         self.activate = tk.BooleanVar(value=True)
         self.device_status = DeviceStatus(False, 0, "Checking…")
         self.installing = False
+        self.catalog_request_id = 0
 
         self._build_shell()
         self._render_cards()
@@ -142,17 +143,18 @@ class SkinLibrary(tk.Tk):
             font=("Segoe UI", 9),
         )
         self.device_label.pack(side="right", padx=(8, 26))
-        tk.Button(
+        self.refresh_button = tk.Button(
             header,
             text="↻",
-            command=self._refresh_device,
+            command=self._refresh_all,
             bg=COLORS["surface"],
             activebackground=COLORS["surface_alt"],
             relief="flat",
             bd=0,
             font=("Segoe UI", 14),
             cursor="hand2",
-        ).pack(side="right")
+        )
+        self.refresh_button.pack(side="right")
 
         content = tk.Frame(central, bg=COLORS["canvas"])
         content.pack(fill="both", expand=True)
@@ -629,18 +631,54 @@ class SkinLibrary(tk.Tk):
         self.progress_label.configure(text="Installation stopped")
         messagebox.showerror("Installation failed", str(exc), parent=self)
 
-    def _refresh_catalog(self) -> None:
-        self.jobs.run(load_catalog, self._catalog_loaded)
+    def _refresh_all(self) -> None:
+        self._refresh_catalog(force_refresh=True)
+        self._refresh_device()
 
-    def _catalog_loaded(self, result) -> None:
+    def _refresh_catalog(self, force_refresh: bool = False) -> None:
+        self.catalog_request_id += 1
+        request_id = self.catalog_request_id
+        if force_refresh:
+            self.refresh_button.configure(state="disabled")
+            self.catalog_label.configure(text="Refreshing online library…")
+        self.jobs.run(
+            lambda: load_catalog(force_refresh=force_refresh),
+            lambda result: self._catalog_loaded(request_id, result),
+            lambda exc: self._catalog_failed(request_id, exc),
+        )
+
+    def _catalog_loaded(self, request_id: int, result) -> None:
+        if request_id != self.catalog_request_id:
+            return
         self.skins, self.catalog_source = result
+        self.refresh_button.configure(state="normal")
         self.catalog_label.configure(text=self.catalog_source)
-        if not self.selection:
+        if self.selection and self.selection.skin:
+            selected_id = self.selection.skin.id
+            selected_skin = next(
+                (skin for skin in self.skins if skin.id == selected_id),
+                None,
+            )
+            self.selection = (
+                Selection.from_skin(selected_skin)
+                if selected_skin
+                else Selection.from_skin(
+                    sort_skins(self.skins, self.sort_order.get())[0]
+                )
+            )
+        elif not self.selection:
             self.selection = Selection.from_skin(
                 sort_skins(self.skins, self.sort_order.get())[0]
             )
         self._render_cards()
         self._render_install_panel()
+
+    def _catalog_failed(self, request_id: int, exc: Exception) -> None:
+        if request_id != self.catalog_request_id:
+            return
+        self.refresh_button.configure(state="normal")
+        self.catalog_label.configure(text=f"{self.catalog_source} • refresh failed")
+        messagebox.showerror("Library refresh failed", str(exc), parent=self)
 
     def _refresh_device(self) -> None:
         if self.demo:
