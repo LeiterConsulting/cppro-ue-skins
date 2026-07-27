@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="256" viewBox="0 0 1280 256">
+  <defs>
+    <linearGradient id="shell" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".48" stop-color="#a9edf2"/>
+      <stop offset="1" stop-color="#658da4"/>
+    </linearGradient>
+    <radialGradient id="core">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".35" stop-color="#c6fbff"/>
+      <stop offset=".62" stop-color="#5ce8ef"/>
+      <stop offset="1" stop-color="#102b3d"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <g id="body">
+      <path d="M78 128 L101 91 L151 88 L181 111 L181 145 L151 168 L101 165 Z"
+            fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+      <path d="M91 128 L109 104 L148 102 L166 117 L166 139 L148 154 L109 152 Z"
+            fill="#142f43" stroke="#7fdce8" stroke-width="3"/>
+      <circle cx="128" cy="128" r="19" fill="url(#core)" stroke="#ffffff" stroke-width="4"
+              filter="url(#glow)"/>
+      <circle cx="128" cy="128" r="7" fill="#08131d"/>
+      <path d="M175 116 L205 96 L223 104" fill="none"
+            stroke="#d9fbff" stroke-width="9" stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <path d="M175 140 L205 160 L223 152" fill="none"
+            stroke="#d9fbff" stroke-width="9" stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <path d="M179 128 L237 128" fill="none" stroke="#ffffff"
+            stroke-width="5" stroke-linecap="round"/>
+      <path d="M237 128 L222 120 L222 136 Z" fill="#ffffff"/>
+      <path d="M81 112 L48 99 L42 119 L79 130 Z"
+            fill="#7298aa" stroke="#efffff" stroke-width="3"/>
+      <path d="M81 144 L48 157 L42 137 L79 126 Z"
+            fill="#7298aa" stroke="#efffff" stroke-width="3"/>
+    </g>
+  </defs>
+
+  <!-- Patrol: balanced stabilizers. -->
+  <g transform="translate(0 0)">
+    <use href="#body"/>
+    <path d="M112 103 L80 69 L70 82 L99 116 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <path d="M112 153 L80 187 L70 174 L99 140 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <circle cx="64" cy="109" r="9" fill="#142f43" stroke="#efffff" stroke-width="3"/>
+    <circle cx="64" cy="147" r="9" fill="#142f43" stroke="#efffff" stroke-width="3"/>
+  </g>
+
+  <!-- Startled: stabilizers thrown wide and core exposed. -->
+  <g transform="translate(256 0)">
+    <use href="#body"/>
+    <path d="M112 103 L67 40 L51 55 L97 118 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <path d="M112 153 L67 216 L51 201 L97 138 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <path d="M82 113 L24 71 L34 111 L82 133 Z" fill="#9ecbd5" stroke="#efffff" stroke-width="3"/>
+    <path d="M82 143 L24 185 L34 145 L82 123 Z" fill="#9ecbd5" stroke="#efffff" stroke-width="3"/>
+    <circle cx="128" cy="128" r="30" fill="none" stroke="#ffffff" stroke-width="4"
+            stroke-dasharray="9 8" opacity=".9"/>
+  </g>
+
+  <!-- Travel: limbs swept back, needle extended. -->
+  <g transform="translate(512 0)">
+    <use href="#body"/>
+    <path d="M112 105 L61 82 L46 99 L101 121 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <path d="M112 151 L61 174 L46 157 L101 135 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <path d="M80 113 L21 96 L37 124 L80 133 Z" fill="#658da4" stroke="#efffff" stroke-width="3"/>
+    <path d="M80 143 L21 160 L37 132 L80 123 Z" fill="#658da4" stroke="#efffff" stroke-width="3"/>
+    <path d="M231 128 L254 128" stroke="#ffffff" stroke-width="7"
+          stroke-linecap="round" filter="url(#glow)"/>
+  </g>
+
+  <!-- Repair: four braces deploy around a bright working core. -->
+  <g transform="translate(768 0)">
+    <use href="#body"/>
+    <path d="M112 104 L91 45 L72 50 L98 119 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <path d="M112 152 L91 211 L72 206 L98 137 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <path d="M153 108 L184 61 L202 70 L168 119 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <path d="M153 148 L184 195 L202 186 L168 137 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <path d="M128 148 C110 170 110 196 95 224" fill="none" stroke="#ffffff"
+          stroke-width="5" stroke-linecap="round" stroke-dasharray="8 8" filter="url(#glow)"/>
+    <path d="M139 146 C151 174 149 199 164 225" fill="none" stroke="#a8f8ff"
+          stroke-width="4" stroke-linecap="round" stroke-dasharray="5 9" filter="url(#glow)"/>
+  </g>
+
+  <!-- Recover: compact stabilizers and a closing core iris. -->
+  <g transform="translate(1024 0)">
+    <use href="#body"/>
+    <path d="M113 104 L88 87 L78 102 L101 120 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <path d="M113 152 L88 169 L78 154 L101 136 Z" fill="url(#shell)" stroke="#efffff" stroke-width="4"/>
+    <rect x="49" y="101" width="31" height="22" rx="8" fill="#658da4"
+          stroke="#efffff" stroke-width="3"/>
+    <rect x="49" y="133" width="31" height="22" rx="8" fill="#658da4"
+          stroke="#efffff" stroke-width="3"/>
+    <path d="M116 116 L140 140 M140 116 L116 140" stroke="#ffffff" stroke-width="4"
+          stroke-linecap="round" opacity=".72"/>
+  </g>
+</svg>

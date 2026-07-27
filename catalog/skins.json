@@ -5,6 +5,30 @@
   "releases_api": "https://api.github.com/repos/LeiterConsulting/cppro-ue-skins/releases?per_page=100",
   "skins": [
     {
+      "id": "mender-swarm",
+      "name": "Mender Swarm",
+      "subtitle": "A living surface with repair crews",
+      "description": "Twelve animated micro-machines patrol a living substrate while key presses leave persistent damage that recruits four independent three-mender repair crews.",
+      "tags": [
+        "Animated",
+        "Physics",
+        "Reactive",
+        "Caps indicator",
+        "Living surface"
+      ],
+      "filename": "cppro_mender_swarm.pak",
+      "bytes": 33700843,
+      "sha256": "2E4AFA331A09745D3AC1F1EB795952192ABDDC517C4671478C94BC392E3893E3",
+      "source_path": "examples/mender-swarm/release/cppro_mender_swarm.pak",
+      "download_url": "https://github.com/LeiterConsulting/cppro-ue-skins/releases/download/v0.3.0/cppro_mender_swarm.pak",
+      "docs_url": "https://github.com/LeiterConsulting/cppro-ue-skins/tree/main/examples/mender-swarm",
+      "accent": "#54E9FF",
+      "published_at": "2026-07-27T15:59:36-04:00",
+      "release_tag": "v0.3.0",
+      "release_asset": "cppro_mender_swarm.pak",
+      "downloads": 0
+    },
+    {
       "id": "moodfield",
       "name": "Moodfield",
       "subtitle": "Adaptive living typing surface",

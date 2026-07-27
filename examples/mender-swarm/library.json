@@ -1,0 +1,16 @@
+{
+  "schema": "cppro-skin-library-entry",
+  "version": 1,
+  "id": "mender-swarm",
+  "name": "Mender Swarm",
+  "subtitle": "A living surface with repair crews",
+  "description": "Twelve animated micro-machines patrol a living substrate while key presses leave persistent damage that recruits four independent three-mender repair crews.",
+  "tags": ["Animated", "Physics", "Reactive", "Caps indicator", "Living surface"],
+  "accent": "#54E9FF",
+  "published_at": "2026-07-27T15:59:36-04:00",
+  "pak": "release/cppro_mender_swarm.pak",
+  "release": {
+    "tag": "v0.3.0",
+    "asset": "cppro_mender_swarm.pak"
+  }
+}
