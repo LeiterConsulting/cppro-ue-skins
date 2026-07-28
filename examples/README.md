@@ -15,6 +15,9 @@ the application.
 | [Keyfield Pulse](keyfield-pulse/README.md) | A clean always-live keyboard skin with mapped lights, hold-sensitive releases, waves, and Caps state | 2 |
 | [Moodfield](moodfield/README.md) | A living substrate with persistent typing geography, compact-pattern recognition, lifecycle color, and Caps state | 2 |
 | [Mender Swarm](mender-swarm/README.md) | A synthetic fabric maintained by twelve animated agents, with persistent key damage and four concurrent repair crews | 2 |
+| [Night Shift](night-shift/README.md) | A layered city with autonomous service craft, persistent calls, and four concurrent response crews | 1 |
+| [Midnight Conveyor](midnight-conveyor/README.md) | An automated sorting floor with moving belts, persistent parcels, and independent bot crews | 2 |
+| [Circuit Stunt Show](circuit-stunt-show/README.md) | A neon circuit arena with animated riders, flowing traces, and persistent stunt sites | 3 |
 | [Koi Pond](koi-pond/README.md) | A full-screen living scene with animated actors, continuous steering, ripples, and localized physics impulses | 5 |
 | [Koi Pond: Caps Indicator](koi-pond-caps-indicator/README.md) | A visual skin that also keeps a small persistent Boolean-style state across input events | 4 |
 

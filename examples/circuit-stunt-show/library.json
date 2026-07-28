@@ -1,0 +1,16 @@
+{
+  "schema": "cppro-skin-library-entry",
+  "version": 1,
+  "id": "circuit-stunt-show",
+  "name": "Circuit Stunt Show",
+  "subtitle": "Tiny riders, giant circuit arena",
+  "description": "Twelve neon riders patrol a circuit-board stunt arena, respond at every mapped key, and split into crews around persistent landing and repair markers.",
+  "tags": ["Animated", "Reactive", "Physics", "Caps indicator", "Arcade"],
+  "accent": "#FF45B9",
+  "published_at": "2026-07-28T13:02:45-04:00",
+  "pak": "release/cppro_circuit_stunt_show_a1.pak",
+  "release": {
+    "tag": "v0.6.0",
+    "asset": "cppro_circuit_stunt_show_a1.pak"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "cppro-skin-library-entry",
+  "version": 1,
+  "id": "night-shift",
+  "name": "Night Shift",
+  "subtitle": "A tiny city that never clocks out",
+  "description": "Service craft patrol a layered midnight city, react to every mapped key, and converge on persistent illuminated work sites while the skyline keeps moving.",
+  "tags": ["Animated", "Reactive", "Physics", "Caps indicator", "City"],
+  "accent": "#58DCFF",
+  "published_at": "2026-07-28T13:01:49-04:00",
+  "pak": "release/cppro_night_shift_a1.pak",
+  "release": {
+    "tag": "v0.4.0",
+    "asset": "cppro_night_shift_a1.pak"
+  }
+}

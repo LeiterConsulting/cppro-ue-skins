@@ -1,0 +1,16 @@
+{
+  "schema": "cppro-skin-library-entry",
+  "version": 1,
+  "id": "midnight-conveyor",
+  "name": "Midnight Conveyor",
+  "subtitle": "The sorting floor runs all night",
+  "description": "Sorter bots patrol four animated production lines, route persistent key-created parcels, and split into independent work crews across the full keyboard.",
+  "tags": ["Animated", "Reactive", "Physics", "Caps indicator", "Factory"],
+  "accent": "#F3992D",
+  "published_at": "2026-07-28T13:02:16-04:00",
+  "pak": "release/cppro_midnight_conveyor_a1.pak",
+  "release": {
+    "tag": "v0.5.0",
+    "asset": "cppro_midnight_conveyor_a1.pak"
+  }
+}

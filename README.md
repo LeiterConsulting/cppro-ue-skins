@@ -25,14 +25,17 @@ official skins, exploratory probes, or private development artifacts.
 | Keyfield Pulse | Daily interactive skin | Clean always-live key lights, hold-sensitive releases, three-stage waves, and a persistent Caps indicator | [Keyfield Pulse](examples/keyfield-pulse/README.md) |
 | Moodfield | Adaptive living surface | Persistent typing geography, compact-pattern recognition, active/retained/afterglow phases, and Caps state | [Moodfield](examples/moodfield/README.md) |
 | Mender Swarm | Living repair simulation | Twelve animated micro-machines, persistent key damage, four concurrent repair crews, physics, and Caps state | [Mender Swarm](examples/mender-swarm/README.md) |
+| Night Shift | Ambient city simulation | Service craft, layered night traffic, persistent calls, four concurrent crews, and Caps state | [Night Shift](examples/night-shift/README.md) |
+| Midnight Conveyor | Ambient factory simulation | Four moving production lines, parcel jobs, sorter-bot crews, and Caps state | [Midnight Conveyor](examples/midnight-conveyor/README.md) |
+| Circuit Stunt Show | Kinetic arcade simulation | Neon riders, flowing circuit traces, persistent stunt sites, four crews, and Caps state | [Circuit Stunt Show](examples/circuit-stunt-show/README.md) |
 | Koi Pond | Living physics sandbox | Full-screen artwork, animated koi, continuous swimming, water ripples, and key-position physics impulses | [Koi Pond](examples/koi-pond/README.md) |
 | Koi Pond: Caps Indicator | Stateful utility skin | Koi Pond plus a session-local Caps Lock indicator with a persistent, edge-latched toggle | [Koi Pond: Caps Indicator](examples/koi-pond-caps-indicator/README.md) |
 
-Each example includes its exact release PAK and SHA-256 checksum. Koi Pond and
-Mender Swarm also include their original artwork, generated animation frames,
-art-preparation tools, editable UE4.27 assets, and canonical source-map
-snapshots. Browse the complete [examples index](examples/README.md) for
-controls and source contents.
+Each example includes its exact release PAK and SHA-256 checksum. Koi Pond,
+Mender Swarm, Night Shift, Midnight Conveyor, and Circuit Stunt Show also
+include their original artwork, generated animation frames, art-preparation
+tools, editable UE4.27 assets, and canonical source-map snapshots. Browse the
+complete [examples index](examples/README.md) for controls and source contents.
 
 ## Desktop skin loader
 
@@ -84,6 +87,9 @@ firmware proves otherwise.
 | `examples/keyfield-pulse/` | Clean always-live keyfield skin with Caps state |
 | `examples/moodfield/` | Adaptive substrate with rolling spatial memories and pattern modes |
 | `examples/mender-swarm/` | Living synthetic surface with damage and concurrent repair crews |
+| `examples/night-shift/` | Layered miniature city with service craft and persistent calls |
+| `examples/midnight-conveyor/` | Automated sorting floor with parcel jobs and bot crews |
+| `examples/circuit-stunt-show/` | Circuit-board stunt arena with animated rider crews |
 | `examples/koi-pond/` | Living physics scene, original art, source map, and PAK |
 | `examples/koi-pond-caps-indicator/` | Koi Pond variant with a persistent Caps Lock toggle |
 | `examples/SKIN_STANDARD.md` | Contract and checklist for publishing a library skin |

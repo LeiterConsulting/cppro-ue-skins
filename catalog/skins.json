@@ -5,6 +5,78 @@
   "releases_api": "https://api.github.com/repos/LeiterConsulting/cppro-ue-skins/releases?per_page=100",
   "skins": [
     {
+      "id": "circuit-stunt-show",
+      "name": "Circuit Stunt Show",
+      "subtitle": "Tiny riders, giant circuit arena",
+      "description": "Twelve neon riders patrol a circuit-board stunt arena, respond at every mapped key, and split into crews around persistent landing and repair markers.",
+      "tags": [
+        "Animated",
+        "Reactive",
+        "Physics",
+        "Caps indicator",
+        "Arcade"
+      ],
+      "filename": "cppro_circuit_stunt_show_a1.pak",
+      "bytes": 32832265,
+      "sha256": "EB17B7E12350E4B484C5A0082055A351DF879772AEABCF1D133A800EB5DB38DB",
+      "source_path": "examples/circuit-stunt-show/release/cppro_circuit_stunt_show_a1.pak",
+      "download_url": "https://github.com/LeiterConsulting/cppro-ue-skins/releases/download/v0.6.0/cppro_circuit_stunt_show_a1.pak",
+      "docs_url": "https://github.com/LeiterConsulting/cppro-ue-skins/tree/main/examples/circuit-stunt-show",
+      "accent": "#FF45B9",
+      "published_at": "2026-07-28T13:02:45-04:00",
+      "release_tag": "v0.6.0",
+      "release_asset": "cppro_circuit_stunt_show_a1.pak",
+      "downloads": 0
+    },
+    {
+      "id": "midnight-conveyor",
+      "name": "Midnight Conveyor",
+      "subtitle": "The sorting floor runs all night",
+      "description": "Sorter bots patrol four animated production lines, route persistent key-created parcels, and split into independent work crews across the full keyboard.",
+      "tags": [
+        "Animated",
+        "Reactive",
+        "Physics",
+        "Caps indicator",
+        "Factory"
+      ],
+      "filename": "cppro_midnight_conveyor_a1.pak",
+      "bytes": 32631572,
+      "sha256": "D7C9C144C04869639E4442340E2A255E1B4BF935FDE21A682E25A770C393D79A",
+      "source_path": "examples/midnight-conveyor/release/cppro_midnight_conveyor_a1.pak",
+      "download_url": "https://github.com/LeiterConsulting/cppro-ue-skins/releases/download/v0.5.0/cppro_midnight_conveyor_a1.pak",
+      "docs_url": "https://github.com/LeiterConsulting/cppro-ue-skins/tree/main/examples/midnight-conveyor",
+      "accent": "#F3992D",
+      "published_at": "2026-07-28T13:02:16-04:00",
+      "release_tag": "v0.5.0",
+      "release_asset": "cppro_midnight_conveyor_a1.pak",
+      "downloads": 0
+    },
+    {
+      "id": "night-shift",
+      "name": "Night Shift",
+      "subtitle": "A tiny city that never clocks out",
+      "description": "Service craft patrol a layered midnight city, react to every mapped key, and converge on persistent illuminated work sites while the skyline keeps moving.",
+      "tags": [
+        "Animated",
+        "Reactive",
+        "Physics",
+        "Caps indicator",
+        "City"
+      ],
+      "filename": "cppro_night_shift_a1.pak",
+      "bytes": 32685168,
+      "sha256": "A04ED446FC1190FD1747B5A436ACD9822B9F5627AA151E05566FB069C69AC6FE",
+      "source_path": "examples/night-shift/release/cppro_night_shift_a1.pak",
+      "download_url": "https://github.com/LeiterConsulting/cppro-ue-skins/releases/download/v0.4.0/cppro_night_shift_a1.pak",
+      "docs_url": "https://github.com/LeiterConsulting/cppro-ue-skins/tree/main/examples/night-shift",
+      "accent": "#58DCFF",
+      "published_at": "2026-07-28T13:01:49-04:00",
+      "release_tag": "v0.4.0",
+      "release_asset": "cppro_night_shift_a1.pak",
+      "downloads": 0
+    },
+    {
       "id": "mender-swarm",
       "name": "Mender Swarm",
       "subtitle": "A living surface with repair crews",
